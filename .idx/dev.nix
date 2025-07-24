@@ -15,10 +15,29 @@
   ];
   # Sets environment variables in the workspace
   env = {};
+  # This adds a file watcher to startup the firebase emulators. The emulators will only start if
+  # a firebase.json file is written into the user's directory
+  services.firebase.emulators = {
+    detect = true;
+    projectId = "officiax-1up1f";
+    services = ["auth" "firestore"];
+  };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
       # "vscodevim.vim"
+      "amazonwebservices.amazon-q-vscode"
+      "bradlc.vscode-tailwindcss"
+      "Continue.continue"
+      "google.geminicodeassist"
+      "redhat.java"
+      "saoudrizwan.claude-dev"
+      "vscjava.vscode-gradle"
+      "vscjava.vscode-java-debug"
+      "vscjava.vscode-java-dependency"
+      "vscjava.vscode-java-pack"
+      "vscjava.vscode-java-test"
+      "vscjava.vscode-maven"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file

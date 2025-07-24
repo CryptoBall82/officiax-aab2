@@ -15,7 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "OfficiaX",
   description:
-    "OfficiaX is an all-in-one app for sports officials, providing rulebooks, venue information, schedules, a weather widget, and a rules expert AI. " +
+    "OfficiaX is an all-in-one app for sports officials, " +
+    "providing rulebooks, venue information, schedules, " +
+    "a weather widget, and a rules expert AI. " +
     "Everything you need to succeed on the field.",
 };
 

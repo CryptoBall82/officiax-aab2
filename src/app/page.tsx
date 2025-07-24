@@ -1,103 +1,126 @@
+// src/app/page.tsx
+"use client";
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined';
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-background to-primary/20 text-foreground">
+      <header className="sticky top-0 z-40 w-full h-[75px] bg-background border-b-[3px] border-primary shadow-[0_4px_10px_4px_rgba(187,187,187,0)]">
+        <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/assets/OX lett white175F.png"
+              alt="OfficiaX Logo"
+              data-ai-hint="logo company"
+              height={40}
+              width={140}
+              style={{ height: '40px', width: 'auto' }}
+              priority
             />
-            Deploy now
-          </a>
+          </Link>
+          <nav className="flex items-center gap-4">
+            <Button variant="ghost" asChild className="text-foreground hover:bg-accent/10 hover:text-accent">
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button variant="outline" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+              <Link href="/signup">Sign Up</Link>
+            </Button>
+          </nav>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        <section className="container mx-auto px-4 py-16 sm:py-24 lg:py-32 text-center">
+
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            Welcome to{' '}
+            <span className="font-cinzel-decorative italic">
+              <span className="text-white">Officia</span>
+              <span className="text-primary">X</span>
+            </span>
+          </h1>
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl md:text-2xl">
+            The ultimate platform for sports officials. Integrate your schedule, access essential tools, instantly access your rulebooks, and leverage our custom AI for rule interpretations.
+          </p>
+          <div className="mt-10 flex justify-center gap-4">
+            <Button asChild className="w-[150px] h-[50px] bg-accent hover:bg-accent/90 text-accent-foreground text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-transform border border-black">
+              <Link href="/signup">
+                Sign Up
+              </Link>
+            </Button>
+            <Button variant="outline" asChild className="w-[150px] h-[50px] text-lg font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-transform border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-white">
+              <Link href="/login">Login</Link>
+            </Button>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <FeatureCard
+                icon={<CalendarMonthOutlinedIcon sx={{ fontSize: '40px', color: 'hsl(var(--accent))', marginBottom: '1rem' }} />}
+                title="Schedule Integration"
+                description="Seamlessly sync your Google and Outlook calendars to manage game schedules effortlessly."
+              />
+              <FeatureCard
+                icon={<ConstructionOutlinedIcon sx={{ fontSize: '40px', color: 'hsl(var(--accent))', marginBottom: '1rem' }} />}
+                title="Official's Toolbox"
+                description="Access weather updates, coin flip widget, umpire classroom, and a mileage/expense tracker all in one place."
+              />
+              <FeatureCard
+                icon={<MenuBookOutlinedIcon sx={{ fontSize: '40px', color: 'hsl(var(--accent))', marginBottom: '1rem' }} />}
+                title="Rulebooks"
+                description="Instantly access official rulebooks for all the leagues you work, right when you need them."
+              />
+              <FeatureCard
+                icon={<AutoAwesomeOutlinedIcon sx={{ fontSize: '40px', color: 'hsl(var(--accent))', marginBottom: '1rem' }} />}
+                title="OfficiaX AI"
+                description="Get instant, AI-powered assistance for all your rule interpretations and queries. This agent is specially trained on the rulebooks you use."
+              />
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border/50 bg-background">
+        © {new Date().getFullYear()} OfficiaX LLC. <span className="italic">The Future of Officiating.</span>
+        {/* Privacy Policy Link */}
+        <div className="mt-2"> {/* Added margin-top for spacing */}
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://www.officiax.com/privacy"
+            target="_blank" // Opens in a new tab/window
+            rel="noopener noreferrer" // Security best practice for target="_blank"
+            className="text-primary hover:underline" // Styles the link
           >
-            Read our docs
+            Privacy Policy
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
+    </div>
+  );
+}
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
+  return (
+    <div className="flex flex-col items-start text-left bg-card p-6 rounded-xl shadow-lg hover:shadow-accent/20 transition-shadow duration-300 border border-primary">
+      {icon}
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 }

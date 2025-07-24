@@ -1,25 +1,25 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// src/app/layout.tsx
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+import { Inter } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { AuthProvider } from '@/context/auth-context';
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "OfficiaX",
-  description:
-    "OfficiaX is an all-in-one app for sports officials, " +
-    "providing rulebooks, venue information, schedules, " +
-    "a weather widget, and a rules expert AI. " +
-    "Everything you need to succeed on the field.",
+  title: 'OfficiaX',
+  description: 'Empowering Officials with Advanced Tools & AI',
 };
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+};
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export default function RootLayout({
   children,
@@ -27,11 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased bg-background text-foreground`}>
+        <AuthProvider>
+          {children}
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

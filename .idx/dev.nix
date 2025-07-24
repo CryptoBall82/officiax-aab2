@@ -6,7 +6,12 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.nodejs_20
+    pkgs.jdk21
     pkgs.bun
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.curl
+    pkgs.android-tools 
   ];
   # Sets environment variables in the workspace
   env = {};

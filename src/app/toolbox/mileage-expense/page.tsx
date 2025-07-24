@@ -6,8 +6,10 @@ import Image from 'next/image';
 import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarTools } from '@/components/NavbarTools';
 import { Button } from '@/components/ui/button';
-import { AlertCircle, CameraIcon, XCircle } from 'lucide-react'; // Added CameraIcon and XCircle
+import { AlertCircle, CameraIcon, XCircle, Download } from 'lucide-react'; // Added icons
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import * as ExcelJS from 'exceljs';
+import { saveAs } from 'file-saver';
 
 // --- Data Interfaces ---
 interface Trip {
@@ -271,6 +273,94 @@ export default function MileageExpenseTrackerPage() {
     }
   };
 
+  /**
+   * Exports log data to Excel file and triggers download
+   */
+  const handleExportCSV = async () => {
+    if (logData.length === 0) {
+      showMessage('error', 'No data to export.');
+      return;
+    }
+
+    // Create a new workbook and worksheet
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Mileage & Expenses');
+    
+    // Add header row with styling
+    worksheet.addRow(['Date', 'Type', 'Purpose', 'Description', 'Amount/Mileage', 'Receipt']);
+    worksheet.getRow(1).font = { bold: true };
+    
+    // Set column widths
+    worksheet.getColumn(1).width = 12; // Date
+    worksheet.getColumn(2).width = 10; // Type
+    worksheet.getColumn(3).width = 10; // Purpose
+    worksheet.getColumn(4).width = 30; // Description
+    worksheet.getColumn(5).width = 15; // Amount/Mileage
+    worksheet.getColumn(6).width = 15; // Receipt
+    
+    // Add data rows
+    let rowIndex = 2; // Start after header
+    for (const entry of logData) {
+      const date = entry.date;
+      const type = entry.type;
+      const purpose = entry.purpose;
+      
+      if (entry.type === 'trip') {
+        // For trip entries
+        const tripEntry = entry as Trip;
+        const description = `${tripEntry.startLocation || ''} to ${tripEntry.endLocation || ''}`.trim();
+        const mileage = tripEntry.mileage;
+        worksheet.addRow([date, type, purpose, description, mileage, 'No']);
+      } else {
+        // For expense entries
+        const expenseEntry = entry as Expense;
+        const description = expenseEntry.description;
+        const amount = expenseEntry.amount;
+        
+        // Add the row first
+        worksheet.addRow([date, type, purpose, description, amount, expenseEntry.receiptImage ? 'See image' : 'No']);
+        
+        // If there's a receipt image, add it to the cell
+        if (expenseEntry.receiptImage) {
+          try {
+            // Get the receipt cell
+            const receiptCell = worksheet.getCell(`F${rowIndex}`);
+            
+            // Add the image to the workbook
+            const imageId = workbook.addImage({
+              base64: expenseEntry.receiptImage,
+              extension: 'jpeg',
+            });
+            
+            // Add the image to the worksheet with larger dimensions
+            worksheet.addImage(imageId, {
+              tl: { col: 5, row: rowIndex - 0.9 },
+              br: { col: 6, row: rowIndex + 2 }, // Make image span multiple rows
+              editAs: 'oneCell'
+            });
+            
+            // Increase row height to accommodate larger image
+            worksheet.getRow(rowIndex).height = 120;
+          } catch (error) {
+            console.error('Error adding image to Excel:', error);
+          }
+        }
+      }
+      rowIndex++;
+    }
+    
+    // Generate Excel file
+    try {
+      const buffer = await workbook.xlsx.writeBuffer();
+      const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      saveAs(blob, `mileage-expense-log-${new Date().toISOString().split('T')[0]}.xlsx`);
+      showMessage('success', 'Excel file exported successfully!');
+    } catch (error) {
+      console.error('Error generating Excel file:', error);
+      showMessage('error', 'Failed to generate Excel file. See console for details.');
+    }
+  };
+
   return (
     <div className="flex flex-col h-screen items-center mx-auto max-w-[500px] bg-background text-foreground">
       <DefaultHeader />
@@ -477,7 +567,23 @@ export default function MileageExpenseTrackerPage() {
                 ))}
               </div>
             )}
-            {logData.length > 0 && (<Button onClick={handleResetData} className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md mt-6">Clear All Data</Button>)}
+            {logData.length > 0 && (
+              <div className="space-y-3 mt-6">
+                <Button 
+                  onClick={handleExportCSV} 
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md flex items-center justify-center space-x-2"
+                >
+                  <Download className="h-5 w-5" />
+                  <span>Export to Excel</span>
+                </Button>
+                <Button 
+                  onClick={handleResetData} 
+                  className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md"
+                >
+                  Clear All Data
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </div>

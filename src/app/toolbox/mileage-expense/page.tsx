@@ -7,7 +7,19 @@ import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarTools } from '@/components/NavbarTools';
 import { Button } from '@/components/ui/button';
 import { AlertCircle, CameraIcon, XCircle, Download } from 'lucide-react'; // Added icons
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+// Import Camera conditionally to avoid errors when Capacitor isn't properly initialized
+let Camera: any;
+let CameraResultType: any;
+let CameraSource: any;
+
+try {
+  const capacitorCamera = require('@capacitor/camera');
+  Camera = capacitorCamera.Camera;
+  CameraResultType = capacitorCamera.CameraResultType;
+  CameraSource = capacitorCamera.CameraSource;
+} catch (error) {
+  console.error('Failed to import Capacitor Camera:', error);
+}
 import * as ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 

@@ -85,7 +85,7 @@ export default function Home() {
             Dashboard
           </span>
           <Image
-            src="/assets/double mascot225.png"
+            src="/assets/thinking dog b.png"
             alt="OfficiaX Icon"
             data-ai-hint="logo icon"
             width={225}

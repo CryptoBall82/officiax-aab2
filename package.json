@@ -19,17 +19,25 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-toast": "^1.2.14",
     "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.5.0",
     "firebase": "^12.0.0",
     "geist": "^1.4.2",
+    "genkit": "1.7.0",
     "lucide-react": "^0.525.0",
     "next": "15.4.2",
+    "patch-package": "^8.0.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react-hook-form": "^7.54.2",
+    "recharts": "^2.15.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^4.0.8"
   },
   "devDependencies": {
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20",
@@ -38,7 +46,8 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.4.2",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }
 }

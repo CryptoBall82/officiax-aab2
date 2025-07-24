@@ -21,7 +21,6 @@ export default function HomePage() {
               data-ai-hint="logo company"
               height={40}
               width={140}
-              style={{ height: '40px', width: 'auto' }}
               priority
             />
           </Link>

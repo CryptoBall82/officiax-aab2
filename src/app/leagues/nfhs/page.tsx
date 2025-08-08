@@ -1,4 +1,4 @@
-
+// src/app/leagues/nfhs/page.tsx
 'use client';
 
 import React from 'react';
@@ -51,7 +51,7 @@ export default function NFHSPage() {
                 height: '225px', // Updated style height
                 width: 'auto',   // Width remains auto
               }}
-              onError={(e: any) => {
+              onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://placehold.co/175x225.png';
               }}

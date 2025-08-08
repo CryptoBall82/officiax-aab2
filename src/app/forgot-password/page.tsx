@@ -55,12 +55,24 @@ export default function ForgotPasswordPage() {
     try {
       await resetPassword(data.email); // Call Firebase resetPassword
       setSuccessMessage("If an account exists for this email, a password reset link has been sent.");
-    } catch (err: any) {
-      setError(err.message || "Failed to send reset link. Please try again.");
+    } catch (err: unknown) {
+      let errorMessage = "Failed to send reset link. Please try again.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      } else if (
+        typeof err === 'object' &&
+        err !== null &&
+        'message' in err &&
+        typeof (err as { message: unknown }).message === 'string'
+      ) {
+         // Fallback for non-Error objects that might still have a message
+         errorMessage = (err as { message: string }).message;
+      }
+
+      setError(errorMessage);
       console.error(err);
     }
   };
-
   return (
     <div className="flex min-h-screen flex-col items-center bg-background">
       <AuthHeader />

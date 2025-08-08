@@ -1,4 +1,4 @@
-
+// src/app/leagues/page.tsx
 'use client';
 
 import React from 'react';
@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function Leagues() {
   const buttonNames = ['AYBA', 'Ocee Park', 'NFHS', 'Perfect Game', 'Training Legends'];
-  const router = useRouter(); 
+  const router = useRouter();
 
   const handleLeagueClick = (leagueName: string) => {
     console.log(`Navigating to ${leagueName}`);
@@ -36,7 +36,7 @@ export default function Leagues() {
              <span
               className="absolute font-bold text-3xl text-white"
               style={{
-                  top: '90px', 
+                  top: '90px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                }}
@@ -59,8 +59,8 @@ export default function Leagues() {
                 height: '129px',
               }}
               priority
-              onError={(e: any) => {
-                e.currentTarget.onerror = null; 
+              onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://placehold.co/225x129.png';
               }}
             />

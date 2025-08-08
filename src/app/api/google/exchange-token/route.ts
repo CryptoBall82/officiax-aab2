@@ -1,4 +1,3 @@
-
 // src/app/api/google/exchange-token/route.ts
 import { type NextRequest, NextResponse } from 'next/server';
 
@@ -36,8 +35,8 @@ export async function POST(request: NextRequest) {
         }
       }, { status: 500 });
     }
-    
-    const determinedRedirectUri = clientRedirectUri; 
+
+    const determinedRedirectUri = clientRedirectUri;
     console.log("[API /google/exchange-token] Using Redirect URI for token exchange (from client):", determinedRedirectUri);
 
 
@@ -90,15 +89,29 @@ export async function POST(request: NextRequest) {
       tokenType: tokens.token_type,
     });
 
-  } catch (error: any) { 
+  } catch (error: unknown) {
     console.error('[API /google/exchange-token] CRITICAL UNHANDLED ERROR IN API ROUTE:', error);
-    
+
+    // Determine a more specific error message if possible
+    let errorMessage = 'An unexpected error occurred on the server during token exchange. Please check server logs.';
+    if (error instanceof Error) {
+        errorMessage = `Critical Internal Server Error: ${error.message}`;
+    } else if (
+      typeof error === 'object' &&
+      error !== null &&
+      'message' in error &&
+      typeof (error as { message: unknown }).message === 'string'
+    ) {
+         errorMessage = `Critical Internal Server Error: ${(error as { message: string }).message}`;
+    }
+
+
     // Return a very simple, guaranteed serializable error response
-    return NextResponse.json({ 
-        error: 'Critical Internal Server Error', 
-        message: 'An unexpected error occurred on the server during token exchange. Please check server logs.',
-        // Optionally include a generic error code or type for client-side handling if needed
-        errorCode: 'API_UNHANDLED_EXCEPTION' 
-    }, { status: 500 });
-  }
-}
+    return NextResponse.json({
+        error: 'Critical Internal Server Error',
+        message: errorMessage,
+           // Optionally include a generic error code or type for client-side handling if needed
+           errorCode: 'API_UNHANDLED_EXCEPTION'
+       }, { status: 500 });
+     }
+   }

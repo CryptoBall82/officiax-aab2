@@ -1,4 +1,4 @@
-
+// src/app/leagues/oceepark/page.tsx
 'use client';
 
 import React, { useState } from 'react'; // Import useState
@@ -68,9 +68,9 @@ export default function OceeParkPage() {
               height: '225px', // Explicit height in style
               width: '225px',   // Explicit width in style
             }}
-            onError={(e: any) => {
+            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = 'https://placehold.co/225x225.png'; 
+              e.currentTarget.src = 'https://placehold.co/225x225.png';
             }}
           />
         </div>
@@ -79,13 +79,13 @@ export default function OceeParkPage() {
           <p
             className="absolute text-white font-semibold text-center"
             style={{
-              bottom: '288px', 
+              bottom: '288px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: '90%' // Ensure text wraps if needed
             }}
           >
-            Code to the umpire's room - 7839
+            Code to the umpire&apos;s room - 7839
           </p>
 
 
@@ -128,9 +128,9 @@ export default function OceeParkPage() {
                width={390}
                height={390}
                className="object-contain rounded-md" // Ensure image fits and has rounded corners
-               onError={(e: any) => {
+               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                  e.currentTarget.onerror = null;
-                 e.currentTarget.src = 'https://placehold.co/390x390.png'; 
+                 e.currentTarget.src = 'https://placehold.co/390x390.png';
                }}
              />
            </div>

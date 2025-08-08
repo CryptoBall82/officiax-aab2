@@ -59,9 +59,16 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
                 }
                 const data: Park[] = await response.json();
                 setAllParksData(data); // Store all fetched data
-            } catch (e: any) {
+            } catch (e: unknown) {
                 console.error("Fetch error:", e);
-                setError(e.message || 'Failed to fetch field status data.');
+                let errorMessage = 'Failed to fetch field status data.';
+                if (e instanceof Error) {
+                    errorMessage = e.message;
+                } else if (typeof e === 'object' && e !== null && 'message' in e && typeof (e as { message: unknown }).message === 'string') {
+                     // Fallback for non-Error objects that might still have a message
+                     errorMessage = (e as { message: string }).message;
+                }
+                setError(errorMessage);
             } finally {
                 setLoading(false);
             }
@@ -84,9 +91,9 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
     const statusMessageWrapperClass = "p-6 text-center text-gray-700 text-xl mt-4";
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col"> 
+        <div className="min-h-screen bg-gray-100 flex flex-col">
             <DefaultHeader />
-            
+
             <div className="flex-grow w-full pt-[80px] pb-[60px] flex flex-col items-center">
                 {/* MODIFIED: Pass the pageTitle prop to PageTitleBar */}
                 <PageTitleBar title={pageTitle} />
@@ -121,7 +128,7 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
                                     <p className="text-xs text-gray-500 mb-4">
                                         Data source: {park.source} | Last Updated: {park.fields[0]?.updateTime || (park.source === "OceePark.com" && park.fields.every(f => f.updateTime === "N/A") ? "N/A" : "Not specified")}
                                     </p>
-                                    
+
                                     {park.fields && park.fields.length > 0 && (
                                         <div className="mt-4 space-y-3">
                                             <h3 className="text-md font-semibold text-gray-800">Field Details:</h3>
@@ -155,11 +162,11 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
 
 // Remove the simple App component if it's not your actual page structure.
 // const App: React.FC = () => {
-//     return (
-//         <div className="App">
-//             <FieldStatusDisplay sourceFilter="SOME_DEFAULT_FILTER_IF_NEEDED" pageTitle="Default Title" />
-//         </div>
-//     );
+//     return (
+//         <div className="App">
+//             <FieldStatusDisplay sourceFilter="SOME_DEFAULT_FILTER_IF_NEEDED" pageTitle="Default Title" />
+//         </div>
+//     );
 // };
 
 // If this file IS your page (e.g., pages/ayba-status.tsx), then you'd structure it like this:
@@ -175,9 +182,9 @@ import React from 'react'; // Already imported at the top
 export default function AYBAStatusPageActual() {
   return (
     // FieldStatusDisplay already includes DefaultHeader, PageTitleBar, NavbarLeagues in its structure
-    <FieldStatusDisplay 
-      sourceFilter="Alpharetta Youth Baseball (Blue Sombrero)" 
-      pageTitle="AYBA Field Statuses" 
+    <FieldStatusDisplay
+      sourceFilter="Alpharetta Youth Baseball (Blue Sombrero)"
+      pageTitle="AYBA Field Statuses"
     />
   );
 }
@@ -187,9 +194,9 @@ export default function AYBAStatusPageActual() {
 // then this file would just export it:
 export default function AYBAStatusPageActual() {
     return (
-        <FieldStatusDisplay 
-        sourceFilter="Alpharetta Youth Baseball (Blue Sombrero)" 
-        pageTitle="AYBA Field Statuses" 
+        <FieldStatusDisplay
+        sourceFilter="Alpharetta Youth Baseball (Blue Sombrero)"
+        pageTitle="AYBA Field Statuses"
       />
     )
 }

@@ -3,15 +3,20 @@
 
 interface ClientIframeProps {
   src: string;
-  // Add other potential props here
+  style?: React.CSSProperties;
+  frameBorder?: string;
+  allow?: string;
+  title?: string;
 }
 
-const ClientIframe: React.FC<ClientIframeProps> = ({ src }) => {
+const ClientIframe: React.FC<ClientIframeProps> = ({ src, style, frameBorder, allow, title }) => {
   return (
     <iframe
       src={src}
-      style={{ width: '100%', height: '100%', border: 'none' }}
-      title="Client Content"
+      style={style || { width: '100%', height: '100%', border: 'none' }}
+      frameBorder={frameBorder}
+      allow={allow}
+      title={title || "Client Content"}
     />
   );
 };

@@ -14,7 +14,7 @@ import { AuthHeader } from '@/components/AuthHeader';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, CheckCircle } from 'lucide-react';
 // import { useAuthRedirect } from '@/hooks/use-auth-redirect'; // REMOVED
-import { Skeleton } from '@/components/ui/skeleton';
+//import { Skeleton } from '@/components/ui/skeleton';
 import { useAuth } from '@/context/auth-context';
 
 const forgotPasswordSchema = z.object({

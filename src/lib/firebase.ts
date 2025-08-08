@@ -1,37 +1,39 @@
 // src/lib/firebase.ts
-import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
-import { getAuth, type Auth } from "firebase/auth";
-import { getFirestore, type Firestore } from "firebase/firestore";
-import { getStorage, type FirebaseStorage } from "firebase/storage"; // Import getStorage and its type
-import { getAnalytics, type Analytics } from "firebase/analytics"; // Import getAnalytics and its type
+import { initializeApp } from "firebase/app";
+import { getAuth, connectAuthEmulator } from "firebase/auth";
+import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
+import { getStorage, connectStorageEmulator } from "firebase/storage";
+import { getAnalytics } from "firebase/analytics"; // Assuming you might use this later
 
-import { firebaseConfig } from "@/config/firebase"; // Import the config from src/config/firebase.ts
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+};
 
-let app: FirebaseApp;
-let auth: Auth;
-let db: Firestore;
-let storage: FirebaseStorage; // Declare storage variable
-let analytics: Analytics | undefined; // Declare analytics variable
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app); // Uncomment if you use analytics
 
-if (!getApps().length) {
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// Connect to emulators if in development
+if (process.env.NODE_ENV === 'development') {
   try {
-    app = initializeApp(firebaseConfig);
-  } catch (error) {
-    console.error("Firebase initialization error", error);
-    throw error;
+    connectAuthEmulator(auth, "http://127.0.0.1:9099");
+    connectFirestoreEmulator(db, "127.0.0.1", 8080);
+    connectStorageEmulator(storage, "127.0.0.1", 9199);
+    console.log("Connected to Firebase Emulators");
+  } catch (e) {
+    console.error("Failed to connect to Firebase Emulators", e);
   }
-} else {
-  app = getApp();
 }
 
-auth = getAuth(app);
-db = getFirestore(app);
-storage = getStorage(app); // Initialize storage
-
-// Initialize analytics only in browser environment
-if (typeof window !== 'undefined') {
-  analytics = getAnalytics(app);
-}
-
-// Export all initialized services
-export { app, auth, db, storage, analytics };
+export { app, auth, db, storage }; // Export app as well if needed elsewhere

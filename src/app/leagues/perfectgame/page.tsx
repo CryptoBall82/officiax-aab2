@@ -4,7 +4,7 @@
 import React from 'react';
 import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarLeagues } from '@/components/NavbarLeagues';
-import Image from 'next/image'; // Import Image component
+//import Image from 'next/image'; // Import Image component
 
 export default function PerfectGamePage() {
   // Use the /preview URL for Google Drive for better embed compatibility

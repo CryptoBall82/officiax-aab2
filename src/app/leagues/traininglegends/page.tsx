@@ -1,3 +1,4 @@
+// src/app/leagues/traininglegends/page.tsx
 'use client';
 
 import React from 'react';
@@ -56,7 +57,7 @@ export default function TrainingLegendsPage() {
                 width: 'auto',   // ADDED: Explicit width in style
               }}
               priority
-              onError={(e: any) => {
+              onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://picsum.photos/295/175'; // Fallback with new dimensions
               }}

@@ -1,13 +1,12 @@
 // src/app/schedule/page.tsx
-
 'use client';
 
 import React from 'react';
 import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarSchedule } from '@/components/NavbarSchedule';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image'; 
+// Removed: import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 // REMOVED: import scheduleImage from '../../../public/assets/calendary225.png'; // No longer needed as src is direct
 
 // Inline SVG for Google Logo
@@ -30,7 +29,7 @@ const OutlookLogoIcon = () => (
 );
 
 export default function Schedule() {
-  const router = useRouter();
+  // Removed: const router = useRouter();
 
   const navigateToGoogleCalendar = () => {
     //console.log('Navigating to Google Calendar page');
@@ -46,7 +45,7 @@ export default function Schedule() {
     <div className="flex flex-col h-screen items-center mx-auto max-w-[500px]">
       <DefaultHeader />
       <div className="flex-grow relative w-full"> {/* Removed pt and pb */}
-        
+
         <div className="flex justify-center relative">
           {/* Schedule Text */}
           <span
@@ -69,7 +68,7 @@ export default function Schedule() {
             height={175}
             style={{
               position: 'absolute',
-              top: '130px', 
+              top: '130px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: 'auto',

@@ -20,7 +20,7 @@ interface TokenData {
 }
 
 interface ErrorDetails {
-  googleResponse?: any;
+  googleResponse?: object; // Changed from any
   requestParams?: {
     code_present?: boolean;
     client_id_present?: boolean;
@@ -79,7 +79,7 @@ function GoogleOAuthCallbackContent() {
             setStatus('error');
             return;
           }
-          
+
           // Store tokens in localStorage
           localStorage.setItem('google_access_token', data.accessToken);
           if (data.refreshToken) {
@@ -92,14 +92,21 @@ function GoogleOAuthCallbackContent() {
 
           setTokenData(data); // Set token data for potential brief display
           setStatus('success');
-          
+
           // Redirect after successful token exchange
           router.push('/schedule/googlecalendar');
 
-        } catch (err: any) {
+        } catch (err: unknown) { // Changed from any
           console.error("Fetch call to /api/google/exchange-token failed:", err);
-          setErrorMessage(err.message || 'An unexpected error occurred during token exchange.');
-          setErrorDetails({ message: err.message });
+          let errorMessage = 'An unexpected error occurred during token exchange.';
+          if (err instanceof Error) {
+              errorMessage = err.message;
+          } else if (typeof err === 'object' && err !== null && 'message' in err && typeof (err as { message: unknown }).message === 'string') {
+               // Fallback for non-Error objects that might still have a message
+               errorMessage = (err as { message: string }).message;
+          }
+          setErrorMessage(errorMessage);
+          setErrorDetails({ message: errorMessage }); // Use the determined error message here
           setStatus('error');
         }
       };
@@ -110,7 +117,7 @@ function GoogleOAuthCallbackContent() {
     }
   }, [searchParams, router]); // Added router to dependency array
 
-  // If status becomes 'success', the redirect will happen. 
+  // If status becomes 'success', the redirect will happen.
   // The content below is mainly for loading and error states, or if redirect fails.
   return (
     <Card className="w-full max-w-md bg-card shadow-xl">

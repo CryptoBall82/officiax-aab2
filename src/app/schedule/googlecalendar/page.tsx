@@ -1,3 +1,4 @@
+// src/app/schedule/googlecalendar/page.tsx
 'use client';
 
 import React from 'react';
@@ -23,7 +24,7 @@ export default function GoogleCalendarPage() {
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-muted-foreground">
-              Due to Google's security policies, Google Calendar cannot be displayed directly within the app.
+              Due to Google&apos;s security policies, Google Calendar cannot be displayed directly within the app.
             </p>
             <p className="text-muted-foreground">
               You can open your calendar in a new browser tab instead.

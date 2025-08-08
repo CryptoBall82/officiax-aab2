@@ -1,3 +1,5 @@
+// src/app/schedule/outlook/page.tsx
+// src/app/schedule/outlook/page.tsx
 'use client';
 
 import React from 'react';
@@ -23,7 +25,7 @@ export default function OutlookPage() {
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-muted-foreground">
-              Due to Microsoft's security policies, Outlook Calendar cannot be displayed directly within the app.
+              Due to Microsoft&apos;s security policies, Outlook Calendar cannot be displayed directly within the app.
             </p>
             <p className="text-muted-foreground">
               You can open your calendar in a new browser tab instead.
@@ -38,3 +40,4 @@ export default function OutlookPage() {
     </div>
   );
 }
+

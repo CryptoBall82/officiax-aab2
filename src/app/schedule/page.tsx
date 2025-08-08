@@ -75,6 +75,7 @@ export default function Schedule() {
               height: '175px'
             }}
             priority
+            unoptimized={true}
             />
         </div>
 

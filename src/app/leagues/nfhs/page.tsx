@@ -51,6 +51,8 @@ export default function NFHSPage() {
                 height: '225px', // Updated style height
                 width: 'auto',   // Width remains auto
               }}
+              priority
+              unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://placehold.co/175x225.png';

@@ -64,6 +64,7 @@ export default function AybaPage() {
                 height: '225px',
                 width: '225px',
               }}
+                unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 const target = e.currentTarget;
                 target.onerror = null;
@@ -123,6 +124,7 @@ export default function AybaPage() {
               width={400}
               height={400}
               className="object-contain rounded-md"
+              unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 const target = e.currentTarget;
                 target.onerror = null;
@@ -154,6 +156,7 @@ export default function AybaPage() {
               width={400}
               height={400}
               className="object-contain rounded-md"
+                unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 const target = e.currentTarget;
                 target.onerror = null;

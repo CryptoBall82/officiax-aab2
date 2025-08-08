@@ -24,7 +24,7 @@ export default function ToolboxPage() {
 
   const toolButtons: ToolButtonInfo[] = [
     { name: 'Weather', path: '/toolbox/weather', icon: <ThunderstormOutlinedIcon sx={{ fontSize: '36px', color: 'black' }} /> },
-    { name: 'Coin Toss', path: '/toolbox/cointoss', icon: <Image src={coinTossImage} alt="Coin Toss" width={36} height={36} data-ai-hint="coin game" /> },
+    { name: 'Coin Toss', path: '/toolbox/cointoss', icon: <Image src={coinTossImage} alt="Coin Toss" width={36} height={36} data-ai-hint="coin game" unoptimized={true}/> },
     { name: 'Ump Class', path: '/toolbox/umpireclassroom', icon: <SchoolOutlinedIcon sx={{ fontSize: '36px', color: 'black' }} /> },
     { name: 'Xpense', path: '/toolbox/mileage-expense', icon: <ReceiptLongOutlinedIcon sx={{ fontSize: '36px', color: 'black' }} /> },
   ];
@@ -65,6 +65,7 @@ export default function ToolboxPage() {
             height: '225px',
           }}
           priority
+          unoptimized={true}
           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
             e.currentTarget.onerror = null; 
             e.currentTarget.src = 'https://placehold.co/225x225.png';

@@ -42,6 +42,7 @@ const HomeHeader: React.FC = () => {
             width: 'auto',
           }}
           priority
+          unoptimized={true}
         />
       </div>
 

@@ -57,6 +57,7 @@ export default function TrainingLegendsPage() {
                 width: 'auto',   // ADDED: Explicit width in style
               }}
               priority
+              unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://picsum.photos/295/175'; // Fallback with new dimensions

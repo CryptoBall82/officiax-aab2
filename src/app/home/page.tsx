@@ -99,6 +99,7 @@ export default function Home() {
               width: 'auto',
             }}
             priority
+            unoptimized={true}
             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = 'https://placehold.co/225x225.png';

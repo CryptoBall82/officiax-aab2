@@ -23,6 +23,7 @@ export default function HomePage() {
               width={140}
               style={{ width: "auto" }}
               priority
+              unoptimized={true}
             />
           </Link>
           <nav className="flex items-center gap-4">

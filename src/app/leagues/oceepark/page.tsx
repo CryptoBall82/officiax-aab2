@@ -68,6 +68,8 @@ export default function OceeParkPage() {
               height: '225px', // Explicit height in style
               width: '225px',   // Explicit width in style
             }}
+            priority
+            unoptimized={true}
             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = 'https://placehold.co/225x225.png';
@@ -128,6 +130,7 @@ export default function OceeParkPage() {
                width={390}
                height={390}
                className="object-contain rounded-md" // Ensure image fits and has rounded corners
+               unoptimized={true}
                onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                  e.currentTarget.onerror = null;
                  e.currentTarget.src = 'https://placehold.co/390x390.png';

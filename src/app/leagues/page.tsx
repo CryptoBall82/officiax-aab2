@@ -59,6 +59,7 @@ export default function Leagues() {
                 height: '129px',
               }}
               priority
+              unoptimized={true}
               onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = 'https://placehold.co/225x129.png';

@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
-
   "dependencies": {
     "@capacitor/android": "^7.4.2",
+    "@capacitor/app": "^7.0.2",
     "@capacitor/camera": "^7.0.1",
     "@capacitor/ios": "^7.4.2",
     "@emotion/react": "^11.14.0",

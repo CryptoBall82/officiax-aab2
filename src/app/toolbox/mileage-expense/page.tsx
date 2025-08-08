@@ -345,11 +345,7 @@ export default function MileageExpenseTrackerPage() {
             });
             
             // Add the image to the worksheet with larger dimensions
-            worksheet.addImage(imageId, {
-              tl: { col: 5, row: rowIndex - 0.9 },
-              br: { col: 6, row: rowIndex + 2 }, // Make image span multiple rows
-              editAs: 'oneCell'
-            });
+            worksheet.addImage(imageId, `F${rowIndex}:F${rowIndex + 2}`);
             
             // Increase row height to accommodate larger image
             worksheet.getRow(rowIndex).height = 120;

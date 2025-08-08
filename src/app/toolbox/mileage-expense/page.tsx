@@ -7,19 +7,14 @@ import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarTools } from '@/components/NavbarTools';
 import { Button } from '@/components/ui/button';
 import { AlertCircle, CameraIcon, XCircle, Download } from 'lucide-react'; // Added icons
-// Import Camera conditionally to avoid errors when Capacitor isn't properly initialized
-let Camera: any;
-let CameraResultType: any;
-let CameraSource: any;
+// Remove direct require and any types
+// let Camera: any;
+// let CameraResultType: any;
+// let CameraSource: any;
 
-try {
-  const capacitorCamera = require('@capacitor/camera');
-  Camera = capacitorCamera.Camera;
-  CameraResultType = capacitorCamera.CameraResultType;
-  CameraSource = capacitorCamera.CameraSource;
-} catch (error) {
-  console.error('Failed to import Capacitor Camera:', error);
-}
+// Import types from capacitor
+import { Camera as CapacitorCamera, CameraResultType as CapacitorCameraResultType, CameraSource as CapacitorCameraSource } from '@capacitor/camera';
+
 import * as ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 
@@ -75,7 +70,23 @@ export default function MileageExpenseTrackerPage() {
   const [isMileageCalculationActive, setIsMileageCalculationActive] = useState(false); // Set to false to deactivate
   const [receiptImagePreview, setReceiptImagePreview] = useState<string | null>(null); // State for image preview
 
+   // State to hold the dynamically imported Capacitor Camera object
+   const [capacitorCamera, setCapacitorCamera] = useState<{ Camera: typeof CapacitorCamera, CameraResultType: typeof CapacitorCameraResultType, CameraSource: typeof CapacitorCameraSource } | null>(null);
+
+
   useEffect(() => {
+    // Dynamically import Capacitor Camera
+    const importCapacitorCamera = async () => {
+      try {
+        const cameraModule = await import('@capacitor/camera');
+ setCapacitorCamera(cameraModule);
+      } catch {
+        console.warn('Capacitor Camera plugin not available (running on web?). Feature disabled.');
+      }
+    };
+
+    importCapacitorCamera();
+
     // Check if the Google Maps API key is available in environment variables
     if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
       setIsApiKeyMissing(true);
@@ -87,7 +98,7 @@ export default function MileageExpenseTrackerPage() {
     } else {
       // If API key is present, and we want to activate the feature, set to true
       // For now, it remains false as per user request to deactivate.
-      // setIsMileageCalculationActive(true);
+       setIsMileageCalculationActive(true); // Uncommented to activate if key is present
     }
   }, [isMileageCalculationActive]); // Dependency added to react to changes in active state
 
@@ -155,15 +166,26 @@ export default function MileageExpenseTrackerPage() {
         // Handle cases where API returns OK status but no routes (e.g., invalid addresses)
         throw new Error(data.error_message || data.status || "No route found. Please check addresses.");
       }
-    } catch (error: any) {
+    } catch (error: unknown) { // Changed from any
       console.error('Error during mileage calculation:', error);
       // Provide user-friendly error messages, especially for CORS/API key issues
       const currentOrigin = typeof window !== 'undefined' ? window.location.origin : 'your-app-origin';
       let displayError = `Mileage calculation failed.\n\n`;
-      if (error.message.includes('Failed to fetch')) {
+
+      let errorDetail = '';
+       if (error instanceof Error) {
+           errorDetail = error.message;
+       } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message: unknown }).message === 'string') {
+            errorDetail = (error as { message: string }).message;
+       } else {
+           errorDetail = String(error); // Convert other types to string
+       }
+
+
+      if (errorDetail.includes('Failed to fetch')) {
         displayError += `This is most likely a CORS (security) issue.\n\nTo fix this, you must authorize your app's domain in the Google Cloud Console:\n1. Open your Google Maps API key settings.\n2. Under "Application restrictions", choose "HTTP referrers".\n3. Add this URL to the allowed list: ${currentOrigin}\n\n`;
       } else {
-        displayError += `Reason: ${error.message}\n\n`;
+        displayError += `Reason: ${errorDetail}\n\n`;
       }
       displayError += `Also verify that the "Directions API" is enabled and project billing is active.`;
       showMessage('error', displayError);
@@ -232,12 +254,17 @@ export default function MileageExpenseTrackerPage() {
    * Handles capturing a receipt photo using Capacitor Camera plugin.
    */
   const handleAddReceipt = async () => {
+     // Check if Capacitor Camera is loaded
+     if (!capacitorCamera) {
+        showMessage('error', 'Camera feature is not available on this platform.');
+        return;
+     }
     try {
-      const photo = await Camera.getPhoto({
+      const photo = await capacitorCamera.Camera.getPhoto({
         quality: 90,
         allowEditing: false, // Set to true if you want users to crop/edit
-        resultType: CameraResultType.Base64, // Get image as base64 string
-        source: CameraSource.Prompt, // Ask user to choose between camera or photo album
+        resultType: capacitorCamera.CameraResultType.Base64, // Get image as base64 string
+        source: capacitorCamera.CameraSource.Prompt, // Ask user to choose between camera or photo album
         webUseInput: true // Required for web-based Capacitor apps to fallback to file input
       });
 
@@ -249,15 +276,24 @@ export default function MileageExpenseTrackerPage() {
       } else {
         showMessage('info', 'No photo captured.');
       }
-    } catch (error: any) {
+    } catch (error: unknown) { // Changed from any
       console.error('Error capturing photo:', error);
       // More user-friendly error messages depending on the error type
-      if (error.message.includes('User cancelled photos app')) {
+      let errorDetail = '';
+       if (error instanceof Error) {
+           errorDetail = error.message;
+       } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message: unknown }).message === 'string') {
+            errorDetail = (error as { message: string }).message;
+       } else {
+           errorDetail = String(error); // Convert other types to string
+       }
+
+      if (errorDetail.includes('User cancelled photos app')) {
         showMessage('info', 'Photo capture cancelled.');
-      } else if (error.message.includes('No camera available')) {
+      } else if (errorDetail.includes('No camera available')) {
         showMessage('error', 'No camera available or permission denied.');
       } else {
-        showMessage('error', `Failed to capture photo: ${error.message}`);
+        showMessage('error', `Failed to capture photo: ${errorDetail}`);
       }
     }
   };
@@ -297,11 +333,11 @@ export default function MileageExpenseTrackerPage() {
     // Create a new workbook and worksheet
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('Mileage & Expenses');
-    
+
     // Add header row with styling
     worksheet.addRow(['Date', 'Type', 'Purpose', 'Description', 'Amount/Mileage', 'Receipt']);
     worksheet.getRow(1).font = { bold: true };
-    
+
     // Set column widths
     worksheet.getColumn(1).width = 12; // Date
     worksheet.getColumn(2).width = 10; // Type
@@ -309,14 +345,14 @@ export default function MileageExpenseTrackerPage() {
     worksheet.getColumn(4).width = 30; // Description
     worksheet.getColumn(5).width = 15; // Amount/Mileage
     worksheet.getColumn(6).width = 15; // Receipt
-    
+
     // Add data rows
     let rowIndex = 2; // Start after header
     for (const entry of logData) {
       const date = entry.date;
       const type = entry.type;
       const purpose = entry.purpose;
-      
+
       if (entry.type === 'trip') {
         // For trip entries
         const tripEntry = entry as Trip;
@@ -328,44 +364,61 @@ export default function MileageExpenseTrackerPage() {
         const expenseEntry = entry as Expense;
         const description = expenseEntry.description;
         const amount = expenseEntry.amount;
-        
+
         // Add the row first
         worksheet.addRow([date, type, purpose, description, amount, expenseEntry.receiptImage ? 'See image' : 'No']);
-        
+
         // If there's a receipt image, add it to the cell
         if (expenseEntry.receiptImage) {
           try {
-            // Get the receipt cell
-            const receiptCell = worksheet.getCell(`F${rowIndex}`);
-            
+            // Get the receipt cell - Removed unused variable warning
+            // const receiptCell = worksheet.getCell(`F${rowIndex}`);
+
             // Add the image to the workbook
             const imageId = workbook.addImage({
               base64: expenseEntry.receiptImage,
               extension: 'jpeg',
             });
-            
+
             // Add the image to the worksheet with larger dimensions
             worksheet.addImage(imageId, `F${rowIndex}:F${rowIndex + 2}`);
-            
+
             // Increase row height to accommodate larger image
             worksheet.getRow(rowIndex).height = 120;
-          } catch (error) {
+          } catch (error: unknown) { // Changed from any
             console.error('Error adding image to Excel:', error);
+             let errorDetail = '';
+             if (error instanceof Error) {
+                 errorDetail = error.message;
+             } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message: unknown }).message === 'string') {
+                  errorDetail = (error as { message: string }).message;
+             } else {
+                 errorDetail = String(error); // Convert other types to string
+             }
+             showMessage('error', `Error adding image to Excel: ${errorDetail}`);
           }
         }
       }
       rowIndex++;
     }
-    
+
     // Generate Excel file
     try {
       const buffer = await workbook.xlsx.writeBuffer();
       const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       saveAs(blob, `mileage-expense-log-${new Date().toISOString().split('T')[0]}.xlsx`);
       showMessage('success', 'Excel file exported successfully!');
-    } catch (error) {
+    } catch (error: unknown) { // Changed from any
       console.error('Error generating Excel file:', error);
-      showMessage('error', 'Failed to generate Excel file. See console for details.');
+       let errorDetail = '';
+       if (error instanceof Error) {
+           errorDetail = error.message;
+       } else if (typeof error === 'object' && error !== null && 'message' in error && typeof (error as { message: unknown }).message === 'string') {
+            errorDetail = (error as { message: string }).message;
+       } else {
+           errorDetail = String(error); // Convert other types to string
+       }
+      showMessage('error', `Failed to generate Excel file: ${errorDetail}`);
     }
   };
 
@@ -404,7 +457,7 @@ export default function MileageExpenseTrackerPage() {
             height={100}
             style={{ width: '225px', height: 'auto' }}
             priority
-            onError={(e: any) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://placehold.co/225x100.png?text=Xpense+Logo'; }}
+            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://placehold.co/225x100.png?text=Xpense+Logo'; }} // Changed from any
           />
         </div>
 

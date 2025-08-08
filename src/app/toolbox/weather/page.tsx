@@ -4,11 +4,16 @@
 import React, { useState, useEffect } from 'react';
 import { DefaultHeader } from '@/components/DefaultHeader';
 import { NavbarTools } from '@/components/NavbarTools';
-import { useRouter } from 'next/navigation'; // Import useRouter, although not used in the provided logic block, it's good practice for pages
+interface WeatherData {
+  temp: number;
+  feels_like: number;
+  humidity: number;
+  wind_speed: number;
+  weather: Array<{ description: string }>;
+}
 
 const WeatherPage = () => {
-  const router = useRouter(); // Initialize router
-  const [weatherData, setWeatherData] = useState<any>(null); // Use 'any' for now, consider defining a type/interface
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [location, setLocation] = useState<{ latitude: number | null; longitude: number | null }>({ latitude: null, longitude: null });
   const [city, setCity] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -69,9 +74,10 @@ const WeatherPage = () => {
              setCity('Unknown location');
           }
 
-        } catch (error: any) {
-           setError(`Could not retrieve weather data: ${error.message}`);
-           console.error('Error fetching weather data:', error);
+        } catch (error: unknown) {
+          const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+          setError(`Could not retrieve weather data: ${errorMessage}`);
+
         }
       };
 

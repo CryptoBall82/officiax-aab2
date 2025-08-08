@@ -65,7 +65,7 @@ export default function ToolboxPage() {
             height: '225px',
           }}
           priority
-          onError={(e: any) => {
+          onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
             e.currentTarget.onerror = null; 
             e.currentTarget.src = 'https://placehold.co/225x225.png';
           }}

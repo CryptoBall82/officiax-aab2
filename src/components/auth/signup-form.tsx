@@ -40,9 +40,13 @@ export function SignupForm() {
     try {
       await signup(data.email, data.password);
       // The context's signup function handles redirection upon success
-    } catch (err: any) {
-      setError(err.message || "Failed to sign up. Please try again.");
-      console.error(err);
+    } catch (err: unknown) {
+      let errorMessage = "Failed to sign up. Please try again.";
+      if (err instanceof Error) {
+        errorMessage = err.message;
+      }
+      setError(errorMessage);
+      console.error('Signup error:', err);
     }
   };
 

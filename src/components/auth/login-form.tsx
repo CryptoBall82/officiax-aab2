@@ -36,9 +36,10 @@ export function LoginForm() {
     try {
       await login(data.email, data.password);
       // The context's login function handles redirection upon success
-    } catch (err: any)      {
-      setError(err.message || "Failed to login. Please check your credentials.");
-      console.error(err);
+    } catch (err: unknown) {
+      // Handle error appropriately
+      const errorMessage = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setError(errorMessage || "Failed to login. Please check your credentials.");
     }
   };
 

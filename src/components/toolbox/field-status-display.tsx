@@ -67,8 +67,14 @@ export function FieldStatusDisplay({ dataSourceUrl, title, description }: FieldS
         }
         const data: FieldStatus[] = await response.json();
         setFieldStatuses(data);
-      } catch (err: any) {
-        setError(err.message || "An unknown error occurred.");
+      } catch (err: unknown) {
+        let errorMessage = "An unknown error occurred.";
+        if (err instanceof Error) {
+          errorMessage = err.message;
+        } else if (typeof err === 'string') {
+          errorMessage = err;
+        }
+        setError(`Failed to load field status: ${errorMessage}`);
         console.error(err);
       } finally {
         setLoading(false);

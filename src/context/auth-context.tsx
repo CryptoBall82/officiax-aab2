@@ -12,6 +12,7 @@ import {
   signInWithEmailAndPassword, // Used for email/password login
   createUserWithEmailAndPassword, // Used for email/password signup
   sendPasswordResetEmail, // Used for sending password reset emails
+  AuthError, // Firebase auth error type
 } from 'firebase/auth';
 
 interface User {
@@ -63,13 +64,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await signInWithEmailAndPassword(auth, email, password);
       // onAuthStateChanged listener will update user and isAuthenticated state
       router.push('/home'); // Redirect to home page after successful login
-    } catch (error: any) {
-      console.error("Firebase Login Error:", error.code, error.message);
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      console.error("Firebase Login Error:", authError.code, authError.message);
       // Provide a more user-friendly error message based on Firebase error codes
       let errorMessage = "Failed to login. Please check your credentials.";
-      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+      if (authError.code === 'auth/user-not-found' || authError.code === 'auth/wrong-password' || authError.code === 'auth/invalid-credential') {
         errorMessage = "Invalid email or password.";
-      } else if (error.code === 'auth/too-many-requests') {
+      } else if (authError.code === 'auth/too-many-requests') {
         errorMessage = "Too many login attempts. Please try again later.";
       }
       throw new Error(errorMessage);
@@ -84,12 +86,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await createUserWithEmailAndPassword(auth, email, password);
       // onAuthStateChanged listener will update user and isAuthenticated state
       router.push('/home'); // Redirect to home page after successful signup and auto-login
-    } catch (error: any) {
-      console.error("Firebase Signup Error:", error.code, error.message);
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      console.error("Firebase Signup Error:", authError.code, authError.message);
       let errorMessage = "Failed to sign up. Please try again.";
-      if (error.code === 'auth/email-already-in-use') {
+      if (authError.code === 'auth/email-already-in-use') {
         errorMessage = "This email is already in use.";
-      } else if (error.code === 'auth/weak-password') {
+      } else if (authError.code === 'auth/weak-password') {
         errorMessage = "Password is too weak. It must be at least 6 characters.";
       }
       throw new Error(errorMessage);
@@ -102,10 +105,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(true);
     try {
       await sendPasswordResetEmail(auth, email);
-    } catch (error: any) {
-      console.error("Firebase Password Reset Error:", error.code, error.message);
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      console.error("Firebase Password Reset Error:", authError.code, authError.message);
       let errorMessage = "Failed to send reset link. Please try again.";
-      if (error.code === 'auth/user-not-found') {
+      if (authError.code === 'auth/user-not-found') {
         errorMessage = "No account found with that email address.";
       }
       throw new Error(errorMessage);
@@ -120,8 +124,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await signOut(auth);
       // onAuthStateChanged listener will update user and isAuthenticated state
       router.push('/login'); // Redirect to login page after logout
-    } catch (error: any) {
-      console.error("Firebase Logout Error:", error.code, error.message);
+    } catch (error: unknown) {
+      const authError = error as AuthError;
+      console.error("Firebase Logout Error:", authError.code, authError.message);
       throw new Error("Failed to log out.");
     } finally {
       setIsLoading(false);

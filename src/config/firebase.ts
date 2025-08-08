@@ -1,6 +1,6 @@
 // src/config/firebase.ts
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { initializeApp } from "firebase/app";
+//import { getAnalytics } from "firebase/analytics";
 
 export const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

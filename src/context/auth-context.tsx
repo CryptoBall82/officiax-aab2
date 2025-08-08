@@ -6,7 +6,6 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { auth } from '@/lib/firebase'; // Import the Firebase auth instance
 import {
-  User as FirebaseUser, // Alias for Firebase User type
   onAuthStateChanged, // Used to observe authentication state changes
   signOut, // Used for logging out
   signInWithEmailAndPassword, // Used for email/password login

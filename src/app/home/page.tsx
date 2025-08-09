@@ -77,7 +77,7 @@ export default function Home() {
           <span
             className="absolute font-bold text-3xl text-foreground"
             style={{
-              top: '90px',
+              top: '105px',
               left: '50%',
               transform: 'translateX(-50%)',
             }}
@@ -88,14 +88,14 @@ export default function Home() {
             src="/assets/thinking dog b.png"
             alt="OfficiaX Icon"
             data-ai-hint="logo icon"
-            width={225}
-            height={225}
+            width={250}
+            height={250}
             style={{
               position: 'absolute',
-              top: '130px',
+              top: '135px',
               left: '50%',
               transform: 'translateX(-50%)',
-              height: '225px',
+              height: '250px',
               width: 'auto',
             }}
             priority
@@ -106,7 +106,7 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="absolute bottom-[90px] left-0 right-0 flex justify-center">
+        <div className="absolute bottom-[105px] left-0 right-0 flex justify-center">
           <div className="grid grid-cols-2 gap-y-[25px] gap-x-[25px] p-4">
             {buttons.map((buttonInfo) => {
               const IconComponent = buttonInfo.icon;

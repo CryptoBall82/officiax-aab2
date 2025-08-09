@@ -42,7 +42,7 @@ export default function AybaPage() {
             <span
               className="absolute font-bold text-3xl text-white"
               style={{
-                top: '90px',
+                top: '100px',
                 left: '50%',
                 transform: 'translateX(-50%)',
               }}
@@ -58,7 +58,7 @@ export default function AybaPage() {
               priority
               style={{
                 position: 'absolute',
-                top: '130px',
+                top: '140px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 height: '225px',
@@ -73,7 +73,7 @@ export default function AybaPage() {
             />
           </div>
 
-          <div className="absolute bottom-[100px] left-0 right-0 flex justify-center">
+          <div className="absolute bottom-[110px] left-0 right-0 flex justify-center">
             <div className="grid grid-cols-2 gap-y-[25px] gap-x-[25px] p-4">
               {buttons.map((buttonInfo) => (
                 <button

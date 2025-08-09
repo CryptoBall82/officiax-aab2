@@ -457,6 +457,7 @@ export default function MileageExpenseTrackerPage() {
             height={100}
             style={{ width: '225px', height: 'auto' }}
             priority
+            unoptimized={true}
             onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.onerror = null; e.currentTarget.src = 'https://placehold.co/225x100.png?text=Xpense+Logo'; }} // Changed from any
           />
         </div>

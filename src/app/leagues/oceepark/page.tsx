@@ -46,7 +46,7 @@ export default function OceeParkPage() {
           <span
             className="absolute font-bold text-3xl text-white whitespace-nowrap"
             style={{
-                top: '90px',
+                top: '100px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                }}
@@ -62,7 +62,7 @@ export default function OceeParkPage() {
             height={225}
             style={{
               position: 'absolute',
-              top: '130px', // Position below title
+              top: '140px', // Position below title
               left: '50%',
               transform: 'translateX(-50%)',
               height: '225px', // Explicit height in style
@@ -81,7 +81,7 @@ export default function OceeParkPage() {
           <p
             className="absolute text-white font-semibold text-center"
             style={{
-              bottom: '288px',
+              bottom: '278px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: '90%' // Ensure text wraps if needed
@@ -92,7 +92,7 @@ export default function OceeParkPage() {
 
 
         {/* Buttons Container */}
-        <div className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 w-full px-4">
+        <div className="absolute bottom-[110px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 w-full px-4">
           {buttons.map((buttonInfo) => (
             <Button
               key={buttonInfo.name}

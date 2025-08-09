@@ -36,7 +36,7 @@ export default function Leagues() {
              <span
               className="absolute font-bold text-3xl text-white"
               style={{
-                  top: '90px',
+                  top: '100px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                }}
@@ -66,7 +66,7 @@ export default function Leagues() {
               }}
             />
           </div>
-          <div className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 w-full px-4">
+          <div className="absolute bottom-[105px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 w-full px-4">
             {buttonNames.map((name) => (
               <Button
                 key={name}

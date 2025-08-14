@@ -95,7 +95,7 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
         <div className="min-h-screen bg-gray-100 flex flex-col">
             <DefaultHeader />
 
-            <div className="flex-grow w-full pt-[80px] pb-[60px] flex flex-col items-center">
+            <div className="flex-grow w-full pt-[100px] pb-[90px] flex flex-col items-center">
                 {/* MODIFIED: Pass the pageTitle prop to PageTitleBar */}
                 <PageTitleBar title={pageTitle} />
 

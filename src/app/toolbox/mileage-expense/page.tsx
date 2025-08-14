@@ -436,7 +436,7 @@ export default function MileageExpenseTrackerPage() {
         </div>
       )}
 
-      <div className="flex-grow relative w-full overflow-y-auto p-4 pt-[calc(75px+10px)] pb-[75px]">
+      <div className="flex-grow relative w-full overflow-y-auto p-4 pt-[calc(95px+10px)] pb-[75px]">
         {/* API Key Missing Alert */}
         {isApiKeyMissing && isMileageCalculationActive && ( // Only show if key is missing AND feature is active
              <div className="bg-destructive/20 border border-destructive text-destructive-foreground p-4 rounded-lg mb-6 flex items-start space-x-3">
@@ -448,7 +448,7 @@ export default function MileageExpenseTrackerPage() {
             </div>
         )}
         {/* Logo */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-10 pt-2.5">
           <Image
             src="/assets/Xpenselogo225.png"
             alt="Xpense Tracker Logo"
@@ -631,15 +631,15 @@ export default function MileageExpenseTrackerPage() {
             )}
             {logData.length > 0 && (
               <div className="space-y-3 mt-6">
-                <Button 
-                  onClick={handleExportCSV} 
+                <Button
+                  onClick={handleExportCSV}
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md flex items-center justify-center space-x-2"
                 >
                   <Download className="h-5 w-5" />
                   <span>Export to Excel</span>
                 </Button>
-                <Button 
-                  onClick={handleResetData} 
+                <Button
+                  onClick={handleResetData}
                   className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md"
                 >
                   Clear All Data

@@ -16,7 +16,7 @@ export default function PerfectGamePage() {
     <div className="flex flex-col h-screen items-center mx-auto max-w-[500px]">
       <DefaultHeader />
       {/* Main content area */}
-      <div className="flex-grow relative w-full pt-[90px] pb-[90px] flex flex-col items-center px-4 space-y-4">
+      <div className="flex-grow relative w-full pt-[110px] pb-[90px] flex flex-col items-center px-4 space-y-4">
 
         {/* Title */}
         <span className="font-bold text-3xl text-foreground"> {/* Changed text-black to text-foreground */}

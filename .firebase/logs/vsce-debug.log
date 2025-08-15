@@ -189,3 +189,25 @@ Generated sources: react\index.d.ts [228B] react\package.json [468B] react\esm\p
 [debug] [2025-08-15T02:19:46.699Z] E0814 22:19:46.700529    9756 installsdk.go:88] Failed to install package: exit status 1
 I0814 22:19:46.701073    9756 load.go:115] Finished reloading
  {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:19:46.700529    9756 installsdk.go:88] Failed to install package: exit status 1\nI0814 22:19:46.701073    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:40:27.683Z] I0814 22:40:27.682087    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.682087    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:40:27.709Z] I0814 22:40:27.708509    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.708509    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:40:27.710Z] I0814 22:40:27.709032    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.709032    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:40:29.752Z] I0814 22:40:29.752268    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.752268    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:40:29.764Z] I0814 22:40:29.763860    9756 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.763860    9756 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T02:40:29.778Z] I0814 22:40:29.778950    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.778950    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:40:29.784Z] I0814 22:40:29.784181    9756 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [248B] esm\index.esm.js [116B] esm\package.json [17B] index.cjs.js [151B] react\package.json [468B] react\esm\index.esm.js [0B] react\README.md [5474B] package.json [860B] README.md [2896B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.784181    9756 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [248B] esm\\index.esm.js [116B] esm\\package.json [17B] index.cjs.js [151B] react\\package.json [468B] react\\esm\\index.esm.js [0B] react\\README.md [5474B] package.json [860B] README.md [2896B] react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] \n"}}
+[debug] [2025-08-15T02:40:29.804Z] I0814 22:40:29.804981    9756 installsdk.go:86] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.804981    9756 installsdk.go:86] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-08-15T02:40:32.925Z] E0814 22:40:32.925784    9756 installsdk.go:88] Failed to install package: exit status 1
+I0814 22:40:32.926294    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:40:32.925784    9756 installsdk.go:88] Failed to install package: exit status 1\nI0814 22:40:32.926294    9756 load.go:115] Finished reloading\n"}}

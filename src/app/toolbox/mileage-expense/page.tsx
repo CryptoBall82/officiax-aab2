@@ -74,12 +74,12 @@ export default function MileageExpenseTrackerPage() {
    const [capacitorCamera, setCapacitorCamera] = useState<{ Camera: typeof CapacitorCamera, CameraResultType: typeof CapacitorCameraResultType, CameraSource: typeof CapacitorCameraSource } | null>(null);
 
 
-  useEffect(() => {
+useEffect(() => {
     // Dynamically import Capacitor Camera
     const importCapacitorCamera = async () => {
       try {
         const cameraModule = await import('@capacitor/camera');
- setCapacitorCamera(cameraModule);
+        setCapacitorCamera(cameraModule);
       } catch {
         console.warn('Capacitor Camera plugin not available (running on web?). Feature disabled.');
       }
@@ -91,16 +91,12 @@ export default function MileageExpenseTrackerPage() {
     if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
       setIsApiKeyMissing(true);
       console.error("CRITICAL CONFIGURATION ERROR: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY is not set in the environment variables.");
-      // Only show error if the feature is meant to be active
-      if (isMileageCalculationActive) {
-        showMessage('error', 'Google Maps API Key is not configured. Mileage calculation is disabled.');
-      }
+      showMessage('error', 'Google Maps API Key is not configured. Mileage calculation is disabled.');
     } else {
       // If API key is present, and we want to activate the feature, set to true
-      // For now, it remains false as per user request to deactivate.
-       setIsMileageCalculationActive(true); // Uncommented to activate if key is present
+      setIsMileageCalculationActive(true);
     }
-  }, [isMileageCalculationActive]); // Dependency added to react to changes in active state
+  }, []); // Changed the dependency array to empty
 
   /**
    * Displays a temporary message to the user.

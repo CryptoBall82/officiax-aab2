@@ -62,7 +62,7 @@ export default function OceeParkPage() {
             height={225}
             style={{
               position: 'absolute',
-              top: '155px', // Position below title
+              top: '160px', // Position below title
               left: '50%',
               transform: 'translateX(-50%)',
               height: '225px', // Explicit height in style
@@ -81,7 +81,7 @@ export default function OceeParkPage() {
           <p
             className="absolute text-white font-semibold text-center"
             style={{
-              top: '350px',
+              top: '400px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: '90%' // Ensure text wraps if needed

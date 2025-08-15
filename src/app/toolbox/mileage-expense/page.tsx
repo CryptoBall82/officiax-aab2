@@ -439,7 +439,7 @@ export default function MileageExpenseTrackerPage() {
       <div className="flex-grow relative w-full overflow-y-auto p-4 pt-[calc(95px+10px)] pb-[75px]">
         {/* API Key Missing Alert */}
         {isApiKeyMissing && isMileageCalculationActive && ( // Only show if key is missing AND feature is active
-             <div className="bg-destructive/20 border border-destructive text-destructive-foreground p-4 rounded-lg mb-6 flex items-start space-x-3">
+             <div className="bg-destructive/20 border border-destructive text-destructive-foreground p-4 rounded-lg mb-4 flex items-start space-x-3">
                 <AlertCircle className="h-5 w-5 mt-1 shrink-0" />
                 <div>
                     <h3 className="font-bold">Configuration Error</h3>
@@ -470,7 +470,7 @@ export default function MileageExpenseTrackerPage() {
         {/* Section Navigation Buttons */}
         <div className="flex justify-around mb-6 px-2">
           <Button onClick={() => setActiveSection('addTrip')} className={`w-1/3 py-2 text-sm font-semibold rounded-md ${activeSection === 'addTrip' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Trip</Button>
-          <Button onClick={() => setActiveSection('addExpense')} className={`w-1/3 py-2 text-sm font-semibold rounded-md mx-2 ${activeSection === 'addExpense' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Expense</Button>
+          <Button onClick={() => setActiveSection('addExpense')} className={`w-1/3 py-2 text-xs font-semibold rounded-md mx-2 ${activeSection === 'addExpense' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Expense</Button>
           <Button onClick={() => setActiveSection('viewLog')} className={`w-1/3 py-2 text-sm font-semibold rounded-md ${activeSection === 'viewLog' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>View Log</Button>
         </div>
 

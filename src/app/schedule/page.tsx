@@ -83,7 +83,7 @@ export default function Schedule() {
         <div className="absolute bottom-[130px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4 w-full px-4">
           {/* Google Calendar Button */}
           <Button
-            className="w-[240px] h-[80px] bg-white text-black border-2 border-[rgba(204,0,0,1)] hover:bg-gray-100 rounded-md shadow-[0_0_8px_4px_rgba(0,0,0,.5)] hover:scale-105 transition-transform relative font-bold flex items-center px-4 space-x-3 text-[15px]"
+            className="w-[240px] h-[80px] bg-white text-black border-2 border-[rgba(204,0,0,1)] hover:bg-gray-100 rounded-md shadow-[0_0_8px_4px_rgba(0,0,0,.5)] hover:scale-105 transition-transform relative font-bold flex items-center px-4 space-x-3 text-[14px]"
             onClick={navigateToGoogleCalendar}
           >
             <GoogleLogoIcon />

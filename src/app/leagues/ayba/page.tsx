@@ -58,7 +58,7 @@ export default function AybaPage() {
               priority
               style={{
                 position: 'absolute',
-                top: '150px',
+                top: '160px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 height: '225px',

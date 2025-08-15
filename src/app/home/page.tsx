@@ -77,7 +77,7 @@ export default function Home() {
           <span
             className="absolute font-bold text-3xl text-foreground"
             style={{
-              top: '115px',
+              top: '110px',
               left: '50%',
               transform: 'translateX(-50%)',
             }}
@@ -92,7 +92,7 @@ export default function Home() {
             height={225}
             style={{
               position: 'absolute',
-              top: '160px',
+              top: '165px',
               left: '50%',
               transform: 'translateX(-50%)',
               height: '225px',

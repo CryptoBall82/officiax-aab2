@@ -1,20 +1,10 @@
 // src/lib/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getAuth, connectAuthEmulator } from "firebase/auth";
-import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
-import { getStorage, connectStorageEmulator } from "firebase/storage";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { firebaseConfig } from "../config/firebase";
 
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -22,9 +12,14 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Connect to emulators if in development
+// The emulator connection is likely causing the network error if emulators are not running.
+// If you want to use the emulators, run `firebase emulators:start` and uncomment the block below.
+/*
 if (process.env.NODE_ENV === 'development') {
   try {
+    const { connectAuthEmulator } = require("firebase/auth");
+    const { connectFirestoreEmulator } = require("firebase/firestore");
+    const { connectStorageEmulator } = require("firebase/storage");
     connectAuthEmulator(auth, "http://127.0.0.1:9099");
     connectFirestoreEmulator(db, "127.0.0.1", 8080);
     connectStorageEmulator(storage, "127.0.0.1", 9199);
@@ -33,5 +28,5 @@ if (process.env.NODE_ENV === 'development') {
     console.error("Failed to connect to Firebase Emulators", e);
   }
 }
-
+*/
 export { app, auth, db, storage }; // Export app as well if needed elsewhere

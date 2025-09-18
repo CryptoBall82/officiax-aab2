@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.OfficiaX1.app" />
-                  <option name="mobileSdkAppId" value="1:882582713145:android:05e8ea2bf982fe2c12aee8" />
-                  <option name="projectId" value="officiax-1up1f" />
-                  <option name="projectNumber" value="882582713145" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

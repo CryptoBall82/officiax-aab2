@@ -444,7 +444,7 @@ useEffect(() => {
             </div>
         )}
         {/* Logo */}
-        <div className="flex justify-center mb-10 pt-2.5">
+        <div className="flex justify-center mb-6 pt-2.5">
           <Image
             src="/assets/Xpenselogo225.png"
             alt="Xpense Tracker Logo"

@@ -27,7 +27,7 @@ export default function SignupPage() {
       <AuthHeader />
       <main className="flex flex-grow flex-col items-center justify-center w-full p-4">
         <Card className="w-full max-w-md bg-card shadow-2xl">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center pt-[10px]"> {/* Added pt-[10px] here */}
             <CardTitle className="text-3xl font-bold tracking-tight">Create Your OfficiaX Account</CardTitle>
             <CardDescription>Join the community and enhance your officiating.</CardDescription>
           </CardHeader>

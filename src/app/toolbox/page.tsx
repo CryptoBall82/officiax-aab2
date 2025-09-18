@@ -41,7 +41,7 @@ export default function ToolboxPage() {
         <span
           className="absolute font-bold text-3xl text-white"
           style={{
-            top: '100px',
+            top: '115px',
             left: '50%',
             transform: 'translateX(-50%)',
           }}
@@ -58,7 +58,7 @@ export default function ToolboxPage() {
           height={225}
           style={{
             position: 'absolute',
-            top: '140px',
+            top: '150px',
             left: '50%',
             transform: 'translateX(-50%)',
             width: 'auto',
@@ -73,8 +73,8 @@ export default function ToolboxPage() {
         />
 
         {/* Buttons Container - Styled like home page */}
-        <div className="absolute bottom-[100px] left-0 right-0 flex justify-center">
-          <div className="grid grid-cols-2 gap-y-[25px] gap-x-[25px] p-4">
+        <div className="absolute bottom-[120px] left-0 right-0 flex justify-center">
+          <div className="grid grid-cols-2 gap-y-[20px] gap-x-[20px] p-4">
             {toolButtons.map((buttonInfo) => {
               return (
                 <button

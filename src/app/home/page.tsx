@@ -77,7 +77,7 @@ export default function Home() {
           <span
             className="absolute font-bold text-3xl text-foreground"
             style={{
-              top: '105px',
+              top: '110px',
               left: '50%',
               transform: 'translateX(-50%)',
             }}
@@ -85,17 +85,17 @@ export default function Home() {
             Dashboard
           </span>
           <Image
-            src="/assets/thinking dog b.png"
+            src="/assets/Office Wall Glass Logo Mockup.png"
             alt="OfficiaX Icon"
             data-ai-hint="logo icon"
-            width={250}
-            height={250}
+            width={225}
+            height={225}
             style={{
               position: 'absolute',
-              top: '135px',
+              top: '165px',
               left: '50%',
               transform: 'translateX(-50%)',
-              height: '250px',
+              height: '225px',
               width: 'auto',
             }}
             priority
@@ -106,8 +106,8 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="absolute bottom-[105px] left-0 right-0 flex justify-center">
-          <div className="grid grid-cols-2 gap-y-[25px] gap-x-[25px] p-4">
+        <div className="absolute bottom-[120px] left-0 right-0 flex justify-center">
+          <div className="grid grid-cols-2 gap-y-[20px] gap-x-[20px] p-4">
             {buttons.map((buttonInfo) => {
               const IconComponent = buttonInfo.icon;
               const textColor = buttonInfo.textColor || '#000000';

@@ -1,0 +1,563 @@
+[debug] [2025-08-15T02:08:35.204Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-08-15T02:08:51.287Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T02:08:51.290Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T02:08:51.291Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T02:08:51.297Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:08:51.297Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:08:51.298Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T02:08:51.300Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:08:51.302Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T02:08:51.318Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.10.1) on port 50001
+[info] i  dataconnect: downloading dataconnect-emulator-2.10.1.exe... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-2.10.1.exe..."}}
+[debug] [2025-08-15T02:08:51.920Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.10.1 
+[debug] [2025-08-15T02:08:51.950Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T02:08:51.951Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T02:08:52.105Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.10.1 200
+[debug] [2025-08-15T02:08:52.106Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v2.10.1 [stream]
+[info] i  dataconnect: Removing outdated emulator files: dataconnect-emulator-2.10.0.exe {"metadata":{"emulator":{"name":"dataconnect"},"message":"Removing outdated emulator files: dataconnect-emulator-2.10.0.exe"}}
+[debug] [2025-08-15T02:08:53.676Z] 'fdc build' failed with error: Unable to build your Data Connect schema and connectors (exit code 1): E0814 22:08:53.628612   40792 cmd.go:43] Error loading data connect config: could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"'fdc build' failed with error: Unable to build your Data Connect schema and connectors (exit code 1): E0814 22:08:53.628612   40792 cmd.go:43] Error loading data connect config: could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:08:53.678Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-15T02:08:53.678Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-15T02:08:53.679Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\Charles Lang\\.cache\\firebase\\emulators\\dataconnect-emulator-2.10.1.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\projects\\officiax-aab2\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\Charles Lang\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.10.1.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\projects\\\\officiax-aab2\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-08-15T02:08:53.803Z] E0814 22:08:53.804830    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:08:53.804830    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:08:53.804Z] E0814 22:08:53.805890    9756 watch.go:76] watchAllDir unable to walk dir `c:\projects\officiax-aab2\dataconnect`: on path "c:\\projects\\officiax-aab2\\dataconnect" (DirEntry: <nil>): CreateFile c:\projects\officiax-aab2\dataconnect: The system cannot find the file specified.
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:08:53.805890    9756 watch.go:76] watchAllDir unable to walk dir `c:\\projects\\officiax-aab2\\dataconnect`: on path \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\" (DirEntry: <nil>): CreateFile c:\\projects\\officiax-aab2\\dataconnect: The system cannot find the file specified.\n"}}
+[debug] [2025-08-15T02:08:53.835Z] I0814 22:08:53.836948    9756 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:08:53.836948    9756 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[error] [Firebase Plugin] error:  {}
+[debug] [2025-08-15T02:09:03.805Z] E0814 22:09:03.807316    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:03.807316    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:09:13.806Z] E0814 22:09:13.807400    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:13.807400    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:09:28.494Z] E0814 22:09:23.808637    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:23.808637    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:09:33.807Z] E0814 22:09:33.808920    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:33.808920    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:09:43.806Z] E0814 22:09:43.808684    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:43.808684    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:09:53.807Z] E0814 22:09:53.809242    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:09:53.809242    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:03.807Z] E0814 22:10:03.809498    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:03.809498    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:13.815Z] E0814 22:10:13.812142    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:13.812142    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:18.729Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T02:10:18.730Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T02:10:18.732Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T02:10:18.732Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T02:10:18.732Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:10:18.732Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T02:10:18.733Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:10:18.734Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T02:10:18.741Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T02:10:18.741Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T02:10:18.742Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T02:10:18.742Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T02:10:18.743Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:10:18.743Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T02:10:18.744Z] Checked if tokens are valid: true, expires at: 1755226953203
+[debug] [2025-08-15T02:10:18.744Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T02:10:19.026Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T02:10:19.026Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T02:10:19.210Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T02:10:19.211Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T02:10:23.809Z] E0814 22:10:23.810691    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:23.810691    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:33.816Z] E0814 22:10:33.818301    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:33.818301    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:43.810Z] E0814 22:10:43.811602    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:43.811602    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:10:53.810Z] E0814 22:10:53.811353    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+E0814 22:10:53.811353    9756 watch.go:76] watchAllDir unable to walk dir `c:\projects\officiax-aab2\dataconnect`: on path "c:\\projects\\officiax-aab2\\dataconnect" (DirEntry: <nil>): CreateFile c:\projects\officiax-aab2\dataconnect: The system cannot find the file specified.
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:10:53.811353    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\nE0814 22:10:53.811353    9756 watch.go:76] watchAllDir unable to walk dir `c:\\projects\\officiax-aab2\\dataconnect`: on path \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\" (DirEntry: <nil>): CreateFile c:\\projects\\officiax-aab2\\dataconnect: The system cannot find the file specified.\n"}}
+[debug] [2025-08-15T02:11:03.810Z] E0814 22:11:03.813446    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:03.813446    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:11:13.812Z] E0814 22:11:13.812134    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:13.812134    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:11:23.819Z] E0814 22:11:23.820045    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:23.820045    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:11:33.812Z] E0814 22:11:33.813438    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:33.813438    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:11:43.821Z] E0814 22:11:43.822800    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:43.822800    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:11:53.812Z] E0814 22:11:53.813563    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:11:53.813563    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:04.260Z] E0814 22:12:03.813707    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:03.813707    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:13.818Z] E0814 22:12:13.814001    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:13.814001    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:23.814Z] E0814 22:12:23.814191    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:23.814191    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:33.818Z] E0814 22:12:33.814959    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:33.814959    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:43.813Z] E0814 22:12:43.815093    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:43.815093    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:12:53.814Z] E0814 22:12:53.815579    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+E0814 22:12:53.816084    9756 watch.go:76] watchAllDir unable to walk dir `c:\projects\officiax-aab2\dataconnect`: on path "c:\\projects\\officiax-aab2\\dataconnect" (DirEntry: <nil>): CreateFile c:\projects\officiax-aab2\dataconnect: The system cannot find the file specified.
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:12:53.815579    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\nE0814 22:12:53.816084    9756 watch.go:76] watchAllDir unable to walk dir `c:\\projects\\officiax-aab2\\dataconnect`: on path \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\" (DirEntry: <nil>): CreateFile c:\\projects\\officiax-aab2\\dataconnect: The system cannot find the file specified.\n"}}
+[debug] [2025-08-15T02:13:03.814Z] E0814 22:13:03.815914    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:03.815914    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:13:13.817Z] E0814 22:13:13.817534    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:13.817534    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:13:23.816Z] E0814 22:13:23.816560    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:23.816560    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:13:34.157Z] E0814 22:13:33.816968    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:33.816968    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:13:43.816Z] E0814 22:13:43.817154    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:43.817154    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:13:53.816Z] E0814 22:13:53.817830    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:13:53.817830    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:03.816Z] E0814 22:14:03.818546    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:03.818546    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:13.817Z] E0814 22:14:13.818367    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:13.818367    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:23.817Z] E0814 22:14:23.818960    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:23.818960    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:33.817Z] E0814 22:14:33.819100    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:33.819100    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:43.818Z] E0814 22:14:43.819945    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:43.819945    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:53.817Z] E0814 22:14:53.819583    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:53.819583    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:14:53.818Z] E0814 22:14:53.819583    9756 watch.go:76] watchAllDir unable to walk dir `c:\projects\officiax-aab2\dataconnect`: on path "c:\\projects\\officiax-aab2\\dataconnect" (DirEntry: <nil>): CreateFile c:\projects\officiax-aab2\dataconnect: The system cannot find the file specified.
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:14:53.819583    9756 watch.go:76] watchAllDir unable to walk dir `c:\\projects\\officiax-aab2\\dataconnect`: on path \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\" (DirEntry: <nil>): CreateFile c:\\projects\\officiax-aab2\\dataconnect: The system cannot find the file specified.\n"}}
+[debug] [2025-08-15T02:15:03.817Z] E0814 22:15:03.820155    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:03.820155    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:15:13.820Z] E0814 22:15:13.820297    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:13.820297    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:15:23.821Z] E0814 22:15:23.821682    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:23.821682    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:15:33.820Z] E0814 22:15:33.821224    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:33.821224    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:15:43.820Z] E0814 22:15:43.821598    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:43.821598    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:15:53.820Z] E0814 22:15:53.821850    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:15:53.821850    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:16:03.820Z] E0814 22:16:03.822253    9756 load.go:23] Could not load config from "c:\\projects\\officiax-aab2\\dataconnect": could not find dataconnect.yaml in `c:\projects\officiax-aab2\dataconnect`
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:16:03.822253    9756 load.go:23] Could not load config from \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\": could not find dataconnect.yaml in `c:\\projects\\officiax-aab2\\dataconnect`\n"}}
+[debug] [2025-08-15T02:16:13.833Z] I0814 22:16:13.833315    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:13.833315    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:16:13.876Z] I0814 22:16:13.875944    9756 control.go:84] [/emulator/officiax-aab2 e932] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:13.875944    9756 control.go:84] [/emulator/officiax-aab2 e932] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T02:16:13.898Z] I0814 22:16:13.898085    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+I0814 22:16:13.898661    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:13.898085    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \nI0814 22:16:13.898661    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:16:33.826Z] I0814 22:16:33.827192    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:33.827192    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:16:33.838Z] I0814 22:16:33.839090    9756 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:33.839090    9756 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T02:16:33.856Z] I0814 22:16:33.856515    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:33.856515    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:16:33.865Z] I0814 22:16:33.865623    9756 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\package.json [468B] react\esm\package.json [17B] react\README.md [5474B] esm\index.esm.js [116B] package.json [860B] README.md [2896B] react\index.d.ts [228B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] index.d.ts [248B] esm\package.json [17B] index.cjs.js [151B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:33.865623    9756 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\package.json [468B] react\\esm\\package.json [17B] react\\README.md [5474B] esm\\index.esm.js [116B] package.json [860B] README.md [2896B] react\\index.d.ts [228B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] index.d.ts [248B] esm\\package.json [17B] index.cjs.js [151B] \n"}}
+[debug] [2025-08-15T02:16:33.883Z] I0814 22:16:33.883903    9756 installsdk.go:86] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:16:33.883903    9756 installsdk.go:86] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-08-15T02:16:36.725Z] E0814 22:16:36.726096    9756 installsdk.go:88] Failed to install package: exit status 1
+I0814 22:16:36.726096    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:16:36.726096    9756 installsdk.go:88] Failed to install package: exit status 1\nI0814 22:16:36.726096    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:19:41.720Z] I0814 22:19:41.721245    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:41.721245    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:19:41.728Z] I0814 22:19:41.729653    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+I0814 22:19:41.729653    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:41.729653    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \nI0814 22:19:41.729653    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:19:44.219Z] I0814 22:19:44.221070    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:44.221070    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:19:44.227Z] I0814 22:19:44.228961    9756 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:44.228961    9756 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T02:19:44.233Z] I0814 22:19:44.234299    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:44.234299    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:19:44.237Z] I0814 22:19:44.238568    9756 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\index.d.ts [228B] react\package.json [468B] react\esm\package.json [17B] react\esm\index.esm.js [0B] index.d.ts [248B] esm\package.json [17B] index.cjs.js [151B] package.json [860B] react\index.cjs.js [0B] react\README.md [5474B] esm\index.esm.js [116B] README.md [2896B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:44.238568    9756 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\index.d.ts [228B] react\\package.json [468B] react\\esm\\package.json [17B] react\\esm\\index.esm.js [0B] index.d.ts [248B] esm\\package.json [17B] index.cjs.js [151B] package.json [860B] react\\index.cjs.js [0B] react\\README.md [5474B] esm\\index.esm.js [116B] README.md [2896B] \n"}}
+[debug] [2025-08-15T02:19:44.251Z] I0814 22:19:44.252147    9756 installsdk.go:86] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:19:44.252147    9756 installsdk.go:86] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-08-15T02:19:46.699Z] E0814 22:19:46.700529    9756 installsdk.go:88] Failed to install package: exit status 1
+I0814 22:19:46.701073    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:19:46.700529    9756 installsdk.go:88] Failed to install package: exit status 1\nI0814 22:19:46.701073    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:40:27.683Z] I0814 22:40:27.682087    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.682087    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:40:27.709Z] I0814 22:40:27.708509    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.708509    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:40:27.710Z] I0814 22:40:27.709032    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:27.709032    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T02:40:29.752Z] I0814 22:40:29.752268    9756 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.752268    9756 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T02:40:29.764Z] I0814 22:40:29.763860    9756 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.763860    9756 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T02:40:29.778Z] I0814 22:40:29.778950    9756 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.778950    9756 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T02:40:29.784Z] I0814 22:40:29.784181    9756 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [248B] esm\index.esm.js [116B] esm\package.json [17B] index.cjs.js [151B] react\package.json [468B] react\esm\index.esm.js [0B] react\README.md [5474B] package.json [860B] README.md [2896B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.784181    9756 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [248B] esm\\index.esm.js [116B] esm\\package.json [17B] index.cjs.js [151B] react\\package.json [468B] react\\esm\\index.esm.js [0B] react\\README.md [5474B] package.json [860B] README.md [2896B] react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] \n"}}
+[debug] [2025-08-15T02:40:29.804Z] I0814 22:40:29.804981    9756 installsdk.go:86] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0814 22:40:29.804981    9756 installsdk.go:86] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-08-15T02:40:32.925Z] E0814 22:40:32.925784    9756 installsdk.go:88] Failed to install package: exit status 1
+I0814 22:40:32.926294    9756 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0814 22:40:32.925784    9756 installsdk.go:88] Failed to install package: exit status 1\nI0814 22:40:32.926294    9756 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T15:08:34.146Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-08-15T15:08:41.671Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T15:08:41.674Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T15:08:41.674Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T15:08:41.679Z] Checked if tokens are valid: false, expires at: 1755226953203
+[debug] [2025-08-15T15:08:41.679Z] Checked if tokens are valid: false, expires at: 1755226953203
+[debug] [2025-08-15T15:08:41.680Z] > refreshing access token with scopes: []
+[debug] [2025-08-15T15:08:41.682Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-15T15:08:41.682Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T15:08:41.693Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.10.1) on port 50002
+[debug] [2025-08-15T15:08:42.359Z] I0815 11:08:42.340393   45344 control.go:84] [/emulator/officiax-aab2 ce08] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.340393   45344 control.go:84] [/emulator/officiax-aab2 ce08] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T15:08:42.360Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-15T15:08:42.360Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-15T15:08:42.361Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\Charles Lang\\.cache\\firebase\\emulators\\dataconnect-emulator-2.10.1.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50002","--config_dir=c:\\projects\\officiax-aab2\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\Charles Lang\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.10.1.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50002\",\"--config_dir=c:\\\\projects\\\\officiax-aab2\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-08-15T15:08:42.453Z] I0815 11:08:42.453158   26900 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.453158   26900 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T15:08:42.501Z] I0815 11:08:42.493424   26900 control.go:84] [/emulator/officiax-aab2 db45] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.493424   26900 control.go:84] [/emulator/officiax-aab2 db45] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T15:08:42.505Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-15T15:08:42.506Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T15:08:42.524Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T15:08:42.526Z] Checked if tokens are valid: true, expires at: 1755274121507
+[debug] [2025-08-15T15:08:42.527Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T15:08:42.532Z] I0815 11:08:42.529892   26900 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.529892   26900 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T15:08:42.563Z] I0815 11:08:42.556623   26900 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+I0815 11:08:42.563065   26900 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] react\README.md [5474B] index.d.ts [248B] esm\index.esm.js [116B] esm\package.json [17B] index.cjs.js [151B] package.json [860B] README.md [2896B] react\index.d.ts [228B] react\package.json [468B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.556623   26900 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \nI0815 11:08:42.563065   26900 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\esm\\package.json [17B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] react\\README.md [5474B] index.d.ts [248B] esm\\index.esm.js [116B] esm\\package.json [17B] index.cjs.js [151B] package.json [860B] README.md [2896B] react\\index.d.ts [228B] react\\package.json [468B] \n"}}
+[debug] [2025-08-15T15:08:42.584Z] I0815 11:08:42.587617   26900 installsdk.go:86] Running command: C:\Program Files\nodejs\npm.cmd install file:dataconnect-generated\js\default-connector
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:42.587617   26900 installsdk.go:86] Running command: C:\\Program Files\\nodejs\\npm.cmd install file:dataconnect-generated\\js\\default-connector\n"}}
+[debug] [2025-08-15T15:08:42.862Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T15:08:42.862Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T15:08:47.232Z] I0815 11:08:47.235875   26900 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:47.235875   26900 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T15:08:47.270Z] I0815 11:08:47.273566   26900 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50002
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:47.273566   26900 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50002\n"}}
+[debug] [2025-08-15T15:08:47.400Z] I0815 11:08:47.403811   26900 engine.go:174] [/emulator/officiax-aab2 db45] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 11:08:47.403811   26900 engine.go:174] [/emulator/officiax-aab2 db45] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-08-15T15:15:07.391Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T15:15:07.391Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T15:15:07.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T15:15:07.393Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T15:15:07.393Z] Checked if tokens are valid: true, expires at: 1755274121507
+[debug] [2025-08-15T15:15:07.393Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T15:15:07.394Z] Checked if tokens are valid: true, expires at: 1755274121507
+[debug] [2025-08-15T15:15:07.395Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T15:15:07.403Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T15:15:07.404Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T15:15:07.405Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T15:15:07.405Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T15:15:07.406Z] Checked if tokens are valid: true, expires at: 1755274121507
+[debug] [2025-08-15T15:15:07.406Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T15:15:07.407Z] Checked if tokens are valid: true, expires at: 1755274121507
+[debug] [2025-08-15T15:15:07.408Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T15:15:07.685Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T15:15:07.685Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T15:15:07.697Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T15:15:07.697Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T15:59:41.598Z] [Firebase Plugin] Received CLI notification.
+[debug] [2025-08-15T15:59:41.611Z] [Firebase Plugin] Received emulators shutdown notification.
+[debug] [2025-08-15T16:26:07.188Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-08-15T16:26:17.253Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T16:26:17.256Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T16:26:17.256Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T16:26:17.261Z] Checked if tokens are valid: false, expires at: 1755274121507
+[debug] [2025-08-15T16:26:17.262Z] Checked if tokens are valid: false, expires at: 1755274121507
+[debug] [2025-08-15T16:26:17.262Z] > refreshing access token with scopes: []
+[debug] [2025-08-15T16:26:17.264Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-15T16:26:17.264Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T16:26:17.539Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-15T16:26:17.539Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T16:26:17.553Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T16:26:17.555Z] Checked if tokens are valid: true, expires at: 1755278776540
+[debug] [2025-08-15T16:26:17.555Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.10.1) on port 50003
+[debug] [2025-08-15T16:26:18.439Z] I0815 12:26:18.421278   31060 control.go:84] [/emulator/officiax-aab2 d91b] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\queries.gql [1947B] connector\mutations.gql [1301B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.421278   31060 control.go:84] [/emulator/officiax-aab2 d91b] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\queries.gql [1947B] connector\\mutations.gql [1301B] \n"}}
+[debug] [2025-08-15T16:26:18.441Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-15T16:26:18.441Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-15T16:26:18.441Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\Charles Lang\\.cache\\firebase\\emulators\\dataconnect-emulator-2.10.1.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50003","--config_dir=c:\\projects\\officiax-aab2\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\Charles Lang\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.10.1.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50003\",\"--config_dir=c:\\\\projects\\\\officiax-aab2\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-08-15T16:26:18.533Z] I0815 12:26:18.525555   34216 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.525555   34216 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T16:26:18.577Z] I0815 12:26:18.558806   34216 control.go:84] [/emulator/officiax-aab2 4a7d] UpdateResources(): done
+Schema: sources: schema\schema.gql [2088B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.558806   34216 control.go:84] [/emulator/officiax-aab2 4a7d] UpdateResources(): done\nSchema: sources: schema\\schema.gql [2088B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T16:26:18.591Z] I0815 12:26:18.592465   34216 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.592465   34216 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T16:26:18.604Z] I0815 12:26:18.605944   34216 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.605944   34216 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] \n"}}
+[debug] [2025-08-15T16:26:18.618Z] I0815 12:26:18.619669   34216 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [248B] esm\index.esm.js [116B] esm\package.json [17B] react\index.d.ts [228B] react\esm\package.json [17B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] index.cjs.js [151B] package.json [860B] README.md [2896B] react\package.json [468B] react\README.md [5474B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.619669   34216 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [248B] esm\\index.esm.js [116B] esm\\package.json [17B] react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] index.cjs.js [151B] package.json [860B] README.md [2896B] react\\package.json [468B] react\\README.md [5474B] \n"}}
+[debug] [2025-08-15T16:26:18.624Z] I0815 12:26:18.625311   34216 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 12:26:18.625311   34216 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.625311   34216 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 12:26:18.625311   34216 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T16:26:18.668Z] I0815 12:26:18.669292   34216 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50003
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.669292   34216 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50003\n"}}
+[debug] [2025-08-15T16:26:18.777Z] I0815 12:26:18.769523   34216 engine.go:174] [/emulator/officiax-aab2 4a7d] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:26:18.769523   34216 engine.go:174] [/emulator/officiax-aab2 4a7d] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-08-15T16:26:18.893Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T16:26:18.894Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGINT 
+[debug] [2025-08-15T16:27:40.947Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T16:27:40.948Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T16:27:40.950Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T16:27:40.950Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T16:27:40.951Z] Checked if tokens are valid: true, expires at: 1755278776540
+[debug] [2025-08-15T16:27:40.951Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T16:27:40.953Z] Checked if tokens are valid: true, expires at: 1755278776540
+[debug] [2025-08-15T16:27:40.954Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T16:27:40.967Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T16:27:40.967Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T16:27:40.969Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T16:27:40.969Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T16:27:40.970Z] Checked if tokens are valid: true, expires at: 1755278776540
+[debug] [2025-08-15T16:27:40.970Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T16:27:40.971Z] Checked if tokens are valid: true, expires at: 1755278776540
+[debug] [2025-08-15T16:27:40.972Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T16:27:41.298Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T16:27:41.298Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T16:27:41.315Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T16:27:41.315Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T16:30:18.267Z] I0815 12:30:18.269099   34216 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.269099   34216 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T16:30:18.313Z] I0815 12:30:18.315299   34216 control.go:84] [/emulator/officiax-aab2 4a7d] UpdateResources(): done
+Schema: sources: schema\schema.gql [1992B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.315299   34216 control.go:84] [/emulator/officiax-aab2 4a7d] UpdateResources(): done\nSchema: sources: schema\\schema.gql [1992B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T16:30:18.341Z] I0815 12:30:18.342223   34216 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.342223   34216 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T16:30:18.349Z] I0815 12:30:18.350483   34216 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\mutation.gql [13679B] main\implicit.gql [1261B] main\input.gql [24408B] prelude.gql [73172B] main\relation.gql [13742B] main\query.gql [5099B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.350483   34216 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\mutation.gql [13679B] main\\implicit.gql [1261B] main\\input.gql [24408B] prelude.gql [73172B] main\\relation.gql [13742B] main\\query.gql [5099B] \n"}}
+[debug] [2025-08-15T16:30:18.352Z] I0815 12:30:18.354238   34216 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: package.json [860B] react\esm\package.json [17B] react\esm\index.esm.js [0B] esm\index.esm.js [116B] esm\package.json [17B] README.md [2896B] react\index.d.ts [228B] react\package.json [468B] react\index.cjs.js [0B] react\README.md [5474B] index.d.ts [595B] index.cjs.js [151B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.354238   34216 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: package.json [860B] react\\esm\\package.json [17B] react\\esm\\index.esm.js [0B] esm\\index.esm.js [116B] esm\\package.json [17B] README.md [2896B] react\\index.d.ts [228B] react\\package.json [468B] react\\index.cjs.js [0B] react\\README.md [5474B] index.d.ts [595B] index.cjs.js [151B] \n"}}
+[debug] [2025-08-15T16:30:18.354Z] I0815 12:30:18.355240   34216 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 12:30:18.355240   34216 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:30:18.355240   34216 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 12:30:18.355240   34216 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T16:42:08.542Z] >>> [apiv2][query] GET http://127.0.0.1:4400/emulators [none]
+[debug] [2025-08-15T16:42:44.216Z] <<< [apiv2][status] GET http://127.0.0.1:4400/emulators 200
+[debug] [2025-08-15T16:42:44.217Z] <<< [apiv2][body] GET http://127.0.0.1:4400/emulators {"hub":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"name":"hub","host":"127.0.0.1","port":4400},"logging":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"name":"logging","host":"127.0.0.1","port":4500},"functions":{"name":"functions","host":"127.0.0.1","port":5001},"hosting":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"name":"hosting","host":"127.0.0.1","port":5000},"eventarc":{"name":"eventarc","host":"127.0.0.1","port":9299},"dataconnect":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":9399},{"address":"::1","family":"IPv6","port":9399}],"name":"dataconnect","host":"127.0.0.1","port":9399,"pid":18600,"timeout":10000},"tasks":{"name":"tasks","host":"127.0.0.1","port":9499}}
+[debug] [2025-08-15T16:42:45.608Z] I0815 12:42:45.595597   34216 engine.go:174] [/emulator/officiax-aab2 4a7d] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 12:42:45.595597   34216 engine.go:174] [/emulator/officiax-aab2 4a7d] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGINT 
+[debug] [2025-08-15T20:38:52.762Z] [Firebase Plugin] Activating Firebase extension.
+[info] [Firebase Plugin] Checked firebase-tools, is up to date!
+[debug] [2025-08-15T20:39:04.199Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T20:39:04.202Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T20:39:04.202Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T20:39:04.205Z] Checked if tokens are valid: false, expires at: 1755278776540
+[debug] [2025-08-15T20:39:04.206Z] Checked if tokens are valid: false, expires at: 1755278776540
+[debug] [2025-08-15T20:39:04.206Z] > refreshing access token with scopes: []
+[debug] [2025-08-15T20:39:04.208Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-08-15T20:39:04.208Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T20:39:04.222Z] [Firebase Plugin] VSCode notification server listening on port 40001
+[debug] [2025-08-15T20:39:04.523Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-08-15T20:39:04.524Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-08-15T20:39:04.542Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T20:39:04.545Z] Checked if tokens are valid: true, expires at: 1755293943525
+[debug] [2025-08-15T20:39:04.547Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[info] [Firebase Plugin] Starting Data Connect toolkit (version 2.10.1) on port 50001
+[debug] [2025-08-15T20:39:05.288Z] I0815 16:39:05.267357   48020 control.go:84] [/emulator/officiax-aab2 2302] UpdateResources(): done
+Schema: sources: schema\schema.gql [1992B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 16:39:05.267357   48020 control.go:84] [/emulator/officiax-aab2 2302] UpdateResources(): done\nSchema: sources: schema\\schema.gql [1992B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T20:39:05.289Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-08-15T20:39:05.290Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-08-15T20:39:05.290Z] Starting Data Connect Emulator with command {"binary":"C:\\Users\\Charles Lang\\.cache\\firebase\\emulators\\dataconnect-emulator-2.10.1.exe","args":["--logtostderr","-v=2","dev","--listen=localhost:50001","--config_dir=c:\\projects\\officiax-aab2\\dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"C:\\\\Users\\\\Charles Lang\\\\.cache\\\\firebase\\\\emulators\\\\dataconnect-emulator-2.10.1.exe\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=localhost:50001\",\"--config_dir=c:\\\\projects\\\\officiax-aab2\\\\dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-08-15T20:39:05.382Z] I0815 16:39:05.382522   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 16:39:05.382522   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T20:39:05.440Z] I0815 16:39:05.420267   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Schema: sources: schema\schema.gql [1992B] 
+Connector "default": sources: connector\mutations.gql [1301B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 16:39:05.420267   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nSchema: sources: schema\\schema.gql [1992B] \nConnector \"default\": sources: connector\\mutations.gql [1301B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T20:39:05.749Z] I0815 16:39:05.457348   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+I0815 16:39:05.467592   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\mutation.gql [13679B] prelude.gql [73172B] main\implicit.gql [1261B] main\input.gql [24408B] main\relation.gql [13742B] main\query.gql [5099B] 
+I0815 16:39:05.471604   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\index.d.ts [228B] react\esm\package.json [17B] react\README.md [5474B] index.d.ts [595B] esm\index.esm.js [116B] index.cjs.js [151B] package.json [860B] react\package.json [468B] react\index.cjs.js [0B] react\esm\index.esm.js [0B] esm\package.json [17B] README.md [2896B] 
+I0815 16:39:05.473616   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 16:39:05.473616   17784 load.go:115] Finished reloading
+I0815 16:39:05.501079   17784 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 16:39:05.457348   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nI0815 16:39:05.467592   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\mutation.gql [13679B] prelude.gql [73172B] main\\implicit.gql [1261B] main\\input.gql [24408B] main\\relation.gql [13742B] main\\query.gql [5099B] \nI0815 16:39:05.471604   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\index.d.ts [228B] react\\esm\\package.json [17B] react\\README.md [5474B] index.d.ts [595B] esm\\index.esm.js [116B] index.cjs.js [151B] package.json [860B] react\\package.json [468B] react\\index.cjs.js [0B] react\\esm\\index.esm.js [0B] esm\\package.json [17B] README.md [2896B] \nI0815 16:39:05.473616   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 16:39:05.473616   17784 load.go:115] Finished reloading\nI0815 16:39:05.501079   17784 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:50001\n"}}
+[debug] [2025-08-15T20:39:05.834Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T20:39:05.834Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T20:39:05.866Z] I0815 16:39:05.866913   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 16:39:05.866913   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-08-15T21:11:34.176Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T21:11:34.176Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T21:11:34.178Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T21:11:34.178Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T21:11:34.179Z] Checked if tokens are valid: true, expires at: 1755293943525
+[debug] [2025-08-15T21:11:34.179Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T21:11:34.180Z] Checked if tokens are valid: true, expires at: 1755293943525
+[debug] [2025-08-15T21:11:34.181Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T21:11:34.188Z] [Firebase Plugin] Value of process.env.MONOSPACE_ENV: undefined
+[debug] [2025-08-15T21:11:34.189Z] [Firebase Plugin] requireAuthWrapper
+[debug] [2025-08-15T21:11:34.190Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-15T21:11:34.190Z] > authorizing via signed-in user (langcharles08@gmail.com)
+[debug] [2025-08-15T21:11:34.190Z] Checked if tokens are valid: true, expires at: 1755293943525
+[debug] [2025-08-15T21:11:34.190Z] [Firebase Plugin] User found:  langcharles08@gmail.com
+[info] [Firebase Plugin] (Core:Project) New user detected, fetching projects
+[debug] [2025-08-15T21:11:34.191Z] Checked if tokens are valid: true, expires at: 1755293943525
+[debug] [2025-08-15T21:11:34.192Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2025-08-15T21:11:34.511Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T21:11:34.511Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T21:11:34.516Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-15T21:11:34.516Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2025-08-15T21:12:26.535Z] [Firebase Plugin] Received emulators started notification. Running detection.
+[debug] [2025-08-15T21:12:26.536Z] >>> [apiv2][query] GET http://127.0.0.1:4400/emulators [none]
+[debug] [2025-08-15T21:12:26.561Z] <<< [apiv2][status] GET http://127.0.0.1:4400/emulators 200
+[debug] [2025-08-15T21:12:26.562Z] <<< [apiv2][body] GET http://127.0.0.1:4400/emulators {"hub":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"name":"hub","host":"127.0.0.1","port":4400},"logging":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"name":"logging","host":"127.0.0.1","port":4500},"hosting":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"name":"hosting","host":"127.0.0.1","port":5000},"dataconnect":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":9399},{"address":"::1","family":"IPv6","port":9399}],"name":"dataconnect","host":"127.0.0.1","port":9399,"pid":45264,"timeout":10000}}
+[debug] [2025-08-15T21:12:26.777Z] I0815 17:12:26.776260   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:12:26.776260   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-08-15T21:18:56.493Z] I0815 17:18:56.492715   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:18:56.492715   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:18:56.537Z] W0815 17:18:56.536624   17784 control.go:58] [/emulator/officiax-aab2 808d] connector "default" has errors: connector\mutations.gql:37: mutation.Placeholder.__typename unexpected field Mutation.__typename
+
+sources: connector\mutations.gql [1391B] connector\queries.gql [1947B] 
+I0815 17:18:56.537627   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1391B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"W0815 17:18:56.536624   17784 control.go:58] [/emulator/officiax-aab2 808d] connector \"default\" has errors: connector\\mutations.gql:37: mutation.Placeholder.__typename unexpected field Mutation.__typename\n\nsources: connector\\mutations.gql [1391B] connector\\queries.gql [1947B] \nI0815 17:18:56.537627   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1391B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T21:18:56.539Z] E0815 17:18:56.538630   17784 load.go:79] Could not load sources: 
+Errors: connector\mutations.gql:37: mutation.Placeholder.__typename unexpected field Mutation.__typename
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"E0815 17:18:56.538630   17784 load.go:79] Could not load sources: \nErrors: connector\\mutations.gql:37: mutation.Placeholder.__typename unexpected field Mutation.__typename\n"}}
+[debug] [2025-08-15T21:18:56.544Z] I0815 17:18:56.543188   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\query.gql [5099B] main\mutation.gql [13679B] main\implicit.gql [1261B] prelude.gql [73172B] main\input.gql [24408B] main\relation.gql [13742B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:18:56.543188   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\query.gql [5099B] main\\mutation.gql [13679B] main\\implicit.gql [1261B] prelude.gql [73172B] main\\input.gql [24408B] main\\relation.gql [13742B] \n"}}
+[debug] [2025-08-15T21:18:56.544Z] I0815 17:18:56.544242   17784 load.go:80] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:18:56.544242   17784 load.go:80] Finished reloading\n"}}
+[debug] [2025-08-15T21:19:11.680Z] I0815 17:19:11.680608   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.680608   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:19:11.696Z] I0815 17:19:11.696726   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1303B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.696726   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1303B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T21:19:11.728Z] I0815 17:19:11.728264   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.728264   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T21:19:11.740Z] I0815 17:19:11.741291   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\implicit.gql [1261B] prelude.gql [73172B] main\input.gql [24408B] main\relation.gql [13742B] main\query.gql [5099B] main\mutation.gql [13679B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.741291   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\implicit.gql [1261B] prelude.gql [73172B] main\\input.gql [24408B] main\\relation.gql [13742B] main\\query.gql [5099B] main\\mutation.gql [13679B] \n"}}
+[debug] [2025-08-15T21:19:11.745Z] I0815 17:19:11.746065   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [595B] package.json [860B] README.md [2896B] react\esm\package.json [17B] react\esm\index.esm.js [0B] esm\index.esm.js [116B] esm\package.json [17B] index.cjs.js [151B] react\index.d.ts [228B] react\package.json [468B] react\index.cjs.js [0B] react\README.md [5474B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.746065   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [595B] package.json [860B] README.md [2896B] react\\esm\\package.json [17B] react\\esm\\index.esm.js [0B] esm\\index.esm.js [116B] esm\\package.json [17B] index.cjs.js [151B] react\\index.d.ts [228B] react\\package.json [468B] react\\index.cjs.js [0B] react\\README.md [5474B] \n"}}
+[debug] [2025-08-15T21:19:11.749Z] I0815 17:19:11.749827   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 17:19:11.749827   17784 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:11.749827   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 17:19:11.749827   17784 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T21:19:35.888Z] I0815 17:19:35.889665   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.889665   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:19:35.907Z] I0815 17:19:35.908473   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1293B] connector\queries.gql [1947B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.908473   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1293B] connector\\queries.gql [1947B] \n"}}
+[debug] [2025-08-15T21:19:35.932Z] I0815 17:19:35.933445   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.933445   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T21:19:35.944Z] I0815 17:19:35.945530   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\query.gql [5099B] main\mutation.gql [13679B] prelude.gql [73172B] main\implicit.gql [1261B] main\input.gql [24408B] main\relation.gql [13742B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.945530   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\query.gql [5099B] main\\mutation.gql [13679B] prelude.gql [73172B] main\\implicit.gql [1261B] main\\input.gql [24408B] main\\relation.gql [13742B] \n"}}
+[debug] [2025-08-15T21:19:35.948Z] I0815 17:19:35.949657   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: index.d.ts [1455B] esm\index.esm.js [599B] index.cjs.js [689B] package.json [860B] README.md [8332B] react\index.d.ts [751B] react\esm\package.json [17B] esm\package.json [17B] react\package.json [468B] react\index.cjs.js [604B] react\esm\index.esm.js [578B] react\README.md [12905B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.949657   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: index.d.ts [1455B] esm\\index.esm.js [599B] index.cjs.js [689B] package.json [860B] README.md [8332B] react\\index.d.ts [751B] react\\esm\\package.json [17B] esm\\package.json [17B] react\\package.json [468B] react\\index.cjs.js [604B] react\\esm\\index.esm.js [578B] react\\README.md [12905B] \n"}}
+[debug] [2025-08-15T21:19:35.949Z] I0815 17:19:35.950672   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 17:19:35.950672   17784 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:35.950672   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 17:19:35.950672   17784 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T21:19:50.641Z] I0815 17:19:50.643398   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.643398   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:19:50.656Z] I0815 17:19:50.657552   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1293B] connector\queries.gql [1927B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.657552   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1293B] connector\\queries.gql [1927B] \n"}}
+[debug] [2025-08-15T21:19:50.679Z] I0815 17:19:50.680799   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.680799   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T21:19:50.688Z] I0815 17:19:50.689660   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: prelude.gql [73172B] main\implicit.gql [1261B] main\input.gql [24408B] main\relation.gql [13742B] main\query.gql [5099B] main\mutation.gql [13679B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.689660   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: prelude.gql [73172B] main\\implicit.gql [1261B] main\\input.gql [24408B] main\\relation.gql [13742B] main\\query.gql [5099B] main\\mutation.gql [13679B] \n"}}
+[debug] [2025-08-15T21:19:50.693Z] I0815 17:19:50.694790   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: esm\package.json [17B] index.cjs.js [1076B] package.json [860B] react\index.d.ts [1134B] react\package.json [468B] react\index.cjs.js [942B] react\esm\index.esm.js [899B] index.d.ts [2119B] README.md [12574B] react\esm\package.json [17B] react\README.md [19079B] esm\index.esm.js [939B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.694790   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: esm\\package.json [17B] index.cjs.js [1076B] package.json [860B] react\\index.d.ts [1134B] react\\package.json [468B] react\\index.cjs.js [942B] react\\esm\\index.esm.js [899B] index.d.ts [2119B] README.md [12574B] react\\esm\\package.json [17B] react\\README.md [19079B] esm\\index.esm.js [939B] \n"}}
+[debug] [2025-08-15T21:19:50.694Z] I0815 17:19:50.695888   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 17:19:50.695888   17784 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:19:50.695888   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 17:19:50.695888   17784 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T21:20:05.090Z] I0815 17:20:05.090609   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.090609   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:20:05.102Z] I0815 17:20:05.102539   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1293B] connector\queries.gql [1928B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.102539   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1293B] connector\\queries.gql [1928B] \n"}}
+[debug] [2025-08-15T21:20:05.127Z] I0815 17:20:05.127708   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.127708   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T21:20:05.136Z] I0815 17:20:05.135209   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\query.gql [5099B] main\mutation.gql [13679B] prelude.gql [73172B] main\implicit.gql [1261B] main\input.gql [24408B] main\relation.gql [13742B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.135209   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\query.gql [5099B] main\\mutation.gql [13679B] prelude.gql [73172B] main\\implicit.gql [1261B] main\\input.gql [24408B] main\\relation.gql [13742B] \n"}}
+[debug] [2025-08-15T21:20:05.141Z] I0815 17:20:05.141453   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: esm\index.esm.js [939B] package.json [860B] react\index.d.ts [1134B] react\esm\package.json [17B] react\esm\index.esm.js [899B] esm\package.json [17B] index.cjs.js [1076B] README.md [12574B] react\package.json [468B] react\index.cjs.js [942B] react\README.md [19079B] index.d.ts [2119B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.141453   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: esm\\index.esm.js [939B] package.json [860B] react\\index.d.ts [1134B] react\\esm\\package.json [17B] react\\esm\\index.esm.js [899B] esm\\package.json [17B] index.cjs.js [1076B] README.md [12574B] react\\package.json [468B] react\\index.cjs.js [942B] react\\README.md [19079B] index.d.ts [2119B] \n"}}
+[debug] [2025-08-15T21:20:05.142Z] I0815 17:20:05.142629   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 17:20:05.142629   17784 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:05.142629   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 17:20:05.142629   17784 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T21:20:16.331Z] I0815 17:20:16.329449   17784 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.329449   17784 load.go:37] Reloading schema and connectors...\n"}}
+[debug] [2025-08-15T21:20:16.346Z] I0815 17:20:16.347429   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done
+Connector "default": sources: connector\mutations.gql [1293B] connector\queries.gql [1926B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.347429   17784 control.go:84] [/emulator/officiax-aab2 808d] UpdateResources(): done\nConnector \"default\": sources: connector\\mutations.gql [1293B] connector\\queries.gql [1926B] \n"}}
+[debug] [2025-08-15T21:20:16.374Z] I0815 17:20:16.373830   17784 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.373830   17784 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\n"}}
+[debug] [2025-08-15T21:20:16.383Z] I0815 17:20:16.383841   17784 collector.go:107] schema extensions wrote into "c:\\projects\\officiax-aab2\\dataconnect\\.dataconnect\\schema"
+Generated sources: main\implicit.gql [1261B] main\input.gql [24408B] main\relation.gql [13742B] main\query.gql [5099B] prelude.gql [73172B] main\mutation.gql [13679B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.383841   17784 collector.go:107] schema extensions wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect\\\\.dataconnect\\\\schema\"\nGenerated sources: main\\implicit.gql [1261B] main\\input.gql [24408B] main\\relation.gql [13742B] main\\query.gql [5099B] prelude.gql [73172B] main\\mutation.gql [13679B] \n"}}
+[debug] [2025-08-15T21:20:16.388Z] I0815 17:20:16.388398   17784 collector.go:107] connector "default" javascriptSdk wrote into "c:\\projects\\officiax-aab2\\dataconnect-generated\\js\\default-connector"
+Generated sources: react\package.json [468B] react\esm\package.json [17B] react\index.cjs.js [942B] react\esm\index.esm.js [899B] esm\index.esm.js [939B] index.cjs.js [1076B] README.md [12574B] react\index.d.ts [1134B] react\README.md [19079B] index.d.ts [2119B] esm\package.json [17B] package.json [860B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.388398   17784 collector.go:107] connector \"default\" javascriptSdk wrote into \"c:\\\\projects\\\\officiax-aab2\\\\dataconnect-generated\\\\js\\\\default-connector\"\nGenerated sources: react\\package.json [468B] react\\esm\\package.json [17B] react\\index.cjs.js [942B] react\\esm\\index.esm.js [899B] esm\\index.esm.js [939B] index.cjs.js [1076B] README.md [12574B] react\\index.d.ts [1134B] react\\README.md [19079B] index.d.ts [2119B] esm\\package.json [17B] package.json [860B] \n"}}
+[debug] [2025-08-15T21:20:16.391Z] I0815 17:20:16.392122   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation
+I0815 17:20:16.392122   17784 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:20:16.392122   17784 installsdk.go:55] Package @firebasegen/default-connector is already installed. Skipping installation\nI0815 17:20:16.392122   17784 load.go:115] Finished reloading\n"}}
+[debug] [2025-08-15T21:20:48.204Z] [Firebase Plugin] Received emulators shutdown notification.
+[debug] [2025-08-15T21:20:48.206Z] [Firebase Plugin] Received emulators shutdown notification.
+[debug] [2025-08-15T21:26:07.676Z] [Firebase Plugin] Received emulators started notification. Running detection.
+[debug] [2025-08-15T21:26:07.678Z] >>> [apiv2][query] GET http://127.0.0.1:4400/emulators [none]
+[debug] [2025-08-15T21:26:07.706Z] <<< [apiv2][status] GET http://127.0.0.1:4400/emulators 200
+[debug] [2025-08-15T21:26:07.706Z] <<< [apiv2][body] GET http://127.0.0.1:4400/emulators {"hub":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"name":"hub","host":"127.0.0.1","port":4400},"logging":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"name":"logging","host":"127.0.0.1","port":4500},"hosting":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"name":"hosting","host":"127.0.0.1","port":5000},"dataconnect":{"listen":[{"address":"127.0.0.1","family":"IPv4","port":9399},{"address":"::1","family":"IPv6","port":9399}],"name":"dataconnect","host":"127.0.0.1","port":9399,"pid":39112,"timeout":10000}}
+[debug] [2025-08-15T21:26:07.847Z] I0815 17:26:07.848496   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0815 17:26:07.848496   17784 engine.go:174] [/emulator/officiax-aab2 808d] ExecuteGraphqlRead IntrospectionQuery: succeeded. \n"}}
+[debug] [2025-08-15T21:26:43.162Z] [Firebase Plugin] Received emulators shutdown notification.
+[debug] [2025-08-15T21:26:43.163Z] [Firebase Plugin] Received emulators shutdown notification.
+[info] [Firebase Plugin] Stopping Data Connect toolkit
+[warn] !  Data Connect Emulator has exited upon receiving signal: SIGINT 

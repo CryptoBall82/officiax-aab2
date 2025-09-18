@@ -30,7 +30,7 @@ export default function NFHSPage() {
             <span
               className="absolute font-bold text-3xl text-white"
               style={{
-                  top: '100px',
+                  top: '115px',
                   left: '50%',
                   transform: 'translateX(-50%)',
                }}
@@ -45,7 +45,7 @@ export default function NFHSPage() {
               height={225} // Updated height prop
               style={{
                 position: 'absolute',
-                top: '140px',
+                top: '155px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 height: '225px', // Updated style height
@@ -60,7 +60,7 @@ export default function NFHSPage() {
             />
           </div>
 
-          <div className="absolute bottom-[110px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-6 w-full px-4">
+          <div className="absolute bottom-[130px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-6 w-full px-4">
             <Button
                 className="w-[240px] h-[80px] bg-white text-black border-2 border-[rgba(204,0,0,1)] hover:bg-gray-100 rounded-md shadow-[0_0_8px_4px_rgba(0,0,0,.5)] hover:scale-105 transition-transform relative font-bold flex items-center justify-center text-lg"
                 onClick={() => handleButtonClick('Middle School')}

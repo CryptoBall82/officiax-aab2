@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import {DefaultHeader} from '@/components/DefaultHeader';
@@ -11,9 +11,9 @@ export default function AI() {
       <DefaultHeader />
       {/* Add padding top and bottom to account for fixed header/navbar */}
       {/* Increased pt from 75px to 85px */}
-      <div className="flex-grow relative w-full pt-[90px] pb-[90px] pl-[10px] pr-[10px]">
+      <div className="flex-grow relative w-full pt-[105px] pb-[105px] pl-[10px] pr-[10px]">
         <ClientIframe
-          src="https://udify.app/chatbot/qhos5x80k9DFeSg0"
+          src="https://udify.app/chat/E2OlBSI46lf8HeLZ"
           style={{ width: '100%', height: '100%' }} // iframe fills the padded container
           frameBorder="0"
           allow="microphone"

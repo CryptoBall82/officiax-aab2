@@ -74,12 +74,12 @@ export default function MileageExpenseTrackerPage() {
    const [capacitorCamera, setCapacitorCamera] = useState<{ Camera: typeof CapacitorCamera, CameraResultType: typeof CapacitorCameraResultType, CameraSource: typeof CapacitorCameraSource } | null>(null);
 
 
-  useEffect(() => {
+useEffect(() => {
     // Dynamically import Capacitor Camera
     const importCapacitorCamera = async () => {
       try {
         const cameraModule = await import('@capacitor/camera');
- setCapacitorCamera(cameraModule);
+        setCapacitorCamera(cameraModule);
       } catch {
         console.warn('Capacitor Camera plugin not available (running on web?). Feature disabled.');
       }
@@ -91,16 +91,12 @@ export default function MileageExpenseTrackerPage() {
     if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
       setIsApiKeyMissing(true);
       console.error("CRITICAL CONFIGURATION ERROR: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY is not set in the environment variables.");
-      // Only show error if the feature is meant to be active
-      if (isMileageCalculationActive) {
-        showMessage('error', 'Google Maps API Key is not configured. Mileage calculation is disabled.');
-      }
+      showMessage('error', 'Google Maps API Key is not configured. Mileage calculation is disabled.');
     } else {
       // If API key is present, and we want to activate the feature, set to true
-      // For now, it remains false as per user request to deactivate.
-       setIsMileageCalculationActive(true); // Uncommented to activate if key is present
+      setIsMileageCalculationActive(true);
     }
-  }, [isMileageCalculationActive]); // Dependency added to react to changes in active state
+  }, []); // Changed the dependency array to empty
 
   /**
    * Displays a temporary message to the user.
@@ -436,10 +432,10 @@ export default function MileageExpenseTrackerPage() {
         </div>
       )}
 
-      <div className="flex-grow relative w-full overflow-y-auto p-4 pt-[calc(75px+10px)] pb-[75px]">
+      <div className="flex-grow relative w-full overflow-y-auto p-4 pt-[calc(95px+10px)] pb-[75px]">
         {/* API Key Missing Alert */}
         {isApiKeyMissing && isMileageCalculationActive && ( // Only show if key is missing AND feature is active
-             <div className="bg-destructive/20 border border-destructive text-destructive-foreground p-4 rounded-lg mb-6 flex items-start space-x-3">
+             <div className="bg-destructive/20 border border-destructive text-destructive-foreground p-4 rounded-lg mb-4 flex items-start space-x-3">
                 <AlertCircle className="h-5 w-5 mt-1 shrink-0" />
                 <div>
                     <h3 className="font-bold">Configuration Error</h3>
@@ -448,7 +444,7 @@ export default function MileageExpenseTrackerPage() {
             </div>
         )}
         {/* Logo */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 pt-2.5">
           <Image
             src="/assets/Xpenselogo225.png"
             alt="Xpense Tracker Logo"
@@ -470,7 +466,7 @@ export default function MileageExpenseTrackerPage() {
         {/* Section Navigation Buttons */}
         <div className="flex justify-around mb-6 px-2">
           <Button onClick={() => setActiveSection('addTrip')} className={`w-1/3 py-2 text-sm font-semibold rounded-md ${activeSection === 'addTrip' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Trip</Button>
-          <Button onClick={() => setActiveSection('addExpense')} className={`w-1/3 py-2 text-sm font-semibold rounded-md mx-2 ${activeSection === 'addExpense' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Expense</Button>
+          <Button onClick={() => setActiveSection('addExpense')} className={`w-1/3 py-2 text-xs font-semibold rounded-md mx-2 ${activeSection === 'addExpense' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>Add Expense</Button>
           <Button onClick={() => setActiveSection('viewLog')} className={`w-1/3 py-2 text-sm font-semibold rounded-md ${activeSection === 'viewLog' ? 'bg-primary text-primary-foreground shadow-md' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}>View Log</Button>
         </div>
 
@@ -631,15 +627,15 @@ export default function MileageExpenseTrackerPage() {
             )}
             {logData.length > 0 && (
               <div className="space-y-3 mt-6">
-                <Button 
-                  onClick={handleExportCSV} 
+                <Button
+                  onClick={handleExportCSV}
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md flex items-center justify-center space-x-2"
                 >
                   <Download className="h-5 w-5" />
                   <span>Export to Excel</span>
                 </Button>
-                <Button 
-                  onClick={handleResetData} 
+                <Button
+                  onClick={handleResetData}
                   className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground font-bold py-3 rounded-md text-lg transition-colors shadow-md"
                 >
                   Clear All Data

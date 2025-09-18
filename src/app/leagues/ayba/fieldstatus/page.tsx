@@ -29,7 +29,7 @@ interface PageTitleBarProps {
 // PageTitleBar Component - MODIFIED to accept a title prop
 const PageTitleBar: React.FC<PageTitleBarProps> = ({ title }) => {
     return (
-        <header className="bg-blue-600 text-white py-4 shadow-md h-[60px] flex items-center justify-center w-full">
+        <header className="bg-blue-600 text-white pt-5 pb-4 shadow-md flex items-center justify-center w-full">
             <h1 className="text-2xl font-bold text-center leading-[28px]">{title}</h1>
         </header>
     );
@@ -94,7 +94,7 @@ const FieldStatusDisplay: React.FC<FieldStatusDisplayProps> = ({ sourceFilter, p
         <div className="min-h-screen bg-gray-100 flex flex-col">
             <DefaultHeader />
 
-            <div className="flex-grow w-full pt-[80px] pb-[60px] flex flex-col items-center">
+            <div className="flex-grow w-full pt-[100px] pb-[90px] flex flex-col items-center">
                 {/* MODIFIED: Pass the pageTitle prop to PageTitleBar */}
                 <PageTitleBar title={pageTitle} />
 

@@ -16,7 +16,7 @@
 bin/
 gen/
 out/
-#  Uncomment the following line in case you need and you don't have the release out type files in your app
+#  Uncomment the following line in case you need and you don't have the release build type files in your app
 # release/
 
 # Gradle files
@@ -57,7 +57,7 @@ captures/
 #*.jks
 #*.keystore
 
-# External native out folder generated in Android Studio 2.2 and later
+# External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 .cxx/
 
